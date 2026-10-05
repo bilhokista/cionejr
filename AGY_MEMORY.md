@@ -29,6 +29,12 @@ cionejr is an experimental open-source illustration skill with reproducible Pyth
 - Added a visible invitation for as many people as possible to help improve the project. Drawing critiques and agent-use reports are welcome alongside focused code changes; programming experience is not required.
 - CONTRIBUTING.md now points newcomers to issues or small pull requests. Existing evidence, privacy, and licensing requirements remain in place.
 
+## Forest example second pass
+
+- Replaced coarse protected rectangles with a shape-aware ground-mark mask (silhouettes plus 12 px margin). Wrote the failing test first, then the implementation; the test covers points inside the old boxes, just outside contours, and on ears, paws and the stump rim.
+- Fox apple now sits on the stump top beside the paw with a contact shadow; deer gaze lowered to the basket; foliage mixes fronds and broad leaves with per-leaf colour jitter. Three floating contact shadows added first were judged detached in a full-resolution crop and removed.
+- Checks run: skill validator, 18 repository tests, 5 forest output tests, `git diff --check`. These do not establish artistic quality; visual judgments are the agent's own.
+
 ## Next
 
 Continue the craft work in docs/roadmap.md. Keep publication/technical checks separate from visual approval. Run behavioral evaluations with actual image inputs in separate agent sessions before claiming effectiveness.

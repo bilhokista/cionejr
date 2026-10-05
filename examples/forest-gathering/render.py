@@ -1,4 +1,5 @@
 """Original digital storybook scene, constructed from edited flat forms."""
+from functools import lru_cache
 from pathlib import Path
 import math
 import random
@@ -172,12 +173,20 @@ def offset(commands,dx,dy):
     return [(kind,*[(x+dx,y+dy) for x,y in coords]) for kind,*coords in commands]
 
 
-def eye(im,x,y,r=4,color='#314c43'):
-    ellipse(im,x,y,r,r*1.08,color)
-    ellipse(im,x+1,y-1,max(.75,r*.22),max(.75,r*.22),'#f6e7bf')
+def eye(im,x,y,r=4,color='#314c43',gaze=(0,0),lid=None):
+    gx,gy=gaze
+    ellipse(im,x+gx*.4,y+gy*.4,r,r*1.08,color)
+    ellipse(im,x+1+gx,y-1+gy,max(.75,r*.22),max(.75,r*.22),'#f6e7bf')
+    if lid:
+        path(im,[('M',(x-r*1.25,y-r*.45)),('C',(x-r*.5,y-r*1.15),(x+r*.5,y-r*1.15),(x+r*1.25,y-r*.45))],
+             stroke=lid,width=1.6)
 
 
-def sprig(im,base,tip,count,color,stemcolor,seed=0,leafwidth=10):
+def jitter(color,rng,amount=9):
+    return tuple(max(0,min(255,c+rng.randint(-amount,amount))) for c in rgb(color))
+
+
+def sprig(im,base,tip,count,color,stemcolor,seed=0,leafwidth=10,kind='frond'):
     rng=random.Random(seed)
     dx,dy=tip[0]-base[0],tip[1]-base[1]
     length=math.hypot(dx,dy)
@@ -187,11 +196,18 @@ def sprig(im,base,tip,count,color,stemcolor,seed=0,leafwidth=10):
     for i in range(1,count+1):
         t=i/(count+1)
         root=(base[0]+dx*t,base[1]+dy*t)
+        if kind=='broad':
+            # Broad leaves alternate along the stem and swing wider than fronds do.
+            side=1 if i%2 else -1
+            reach=rng.uniform(26,40)*(1-t*.3)
+            end=(root[0]+nx*reach*side+dx*.2,root[1]+ny*reach*side+dy*.2)
+            leaf(im,root,end,leafwidth*rng.uniform(1.25,1.7),jitter(color,rng),stemcolor)
+            continue
         for side in (-1,1):
             reach=rng.uniform(21,42)*(1-t*.4)
             end=(root[0]+nx*reach*side+dx*.11,root[1]+ny*reach*side+dy*.11)
-            leaf(im,root,end,leafwidth*rng.uniform(.65,1.15),color,stemcolor)
-    leaf(im,(base[0]+dx*.85,base[1]+dy*.85),tip,leafwidth*.65,color)
+            leaf(im,root,end,leafwidth*rng.uniform(.65,1.15),jitter(color,rng,6),stemcolor)
+    leaf(im,(base[0]+dx*.85,base[1]+dy*.85),tip,leafwidth*(1.1 if kind=='broad' else .65),color)
 
 
 def forest(im):
@@ -259,8 +275,9 @@ def forest(im):
             ((65,351),(73,159),7,'#719067',14),((959,422),(925,230),7,'#5e835c',15),
             ((261,132),(390,54),5,'#66865d',16),((737,115),(635,36),5,'#809460',17),
             ((189,455),(278,373),5,'#7fa378',18),((861,544),(937,456),4,'#89a46c',19)]
+    broad={16,18,19}
     for base,tip,n,color,seed in sprays:
-        sprig(im,base,tip,n,color,'#91ae76',seed,12)
+        sprig(im,base,tip,n,color,'#91ae76',seed,12,'broad' if seed in broad else 'frond')
     # Individual larger leaves keep the canopy from becoming identical small fronds.
     for root,tip,width,color in [((195,238),(237,113),35,'#3c6852'),((264,213),(311,106),30,'#4f7756'),
                                 ((814,195),(751,104),32,'#648259'),((866,331),(841,223),27,'#688c5e'),
@@ -290,8 +307,9 @@ def deer(im):
     path(im,DEER_HEAD,fill='#c9ae7f')
     path(im,[('M',(521,570)),('C',(532,564),(546,563),(559,574)),
              ('C',(553,604),(532,616),(521,595)),('L',(521,570))],fill='#e5d2a8')
-    eye(im,515,555,3.7)
-    eye(im,552,553,3.7)
+    # The deer lowers its gaze to the basket, so attention runs fox, basket, rabbit and deer.
+    eye(im,515,556,3.7,gaze=(.6,1.7),lid='#8d7455')
+    eye(im,552,554,3.7,gaze=(.6,1.7),lid='#8d7455')
     ellipse(im,539,594,7,4,'#475747')
     path(im,[('M',(539,598)),('C',(536,603),(532,603),(529,601))],stroke='#7f7d5c',width=1)
     for x,y,rx,ry in [(588,652,5,3),(610,647,5,3),(629,657,5,3),
@@ -378,8 +396,6 @@ def fox(im):
     path(im,[('M',(421,805)),('L',(442,807)),('C',(454,818),(453,833),(439,837)),
              ('L',(418,831)),('L',(421,805))],fill='#e9cea0')
     for x in (433,439):path(im,[('M',(x,817)),('L',(x+3,827))],stroke='#b99a70',width=1)
-    # A rounded apple rests immediately above the paw, not floating between objects.
-    apple(im,447,799,14,'#bb6550')
 
 
 def rabbit(im):
@@ -429,6 +445,7 @@ def table(im):
     ellipse(im,526,825,75,18,None,'#b5966d',1.3)
     ellipse(im,526,825,53,12,None,'#b5966d',1)
     ellipse(im,530,825,23,6,None,'#b5966d',1)
+    ellipse(im,521,833,52,8,'#b39868')
     # Basket bottom lies on the stump surface; the fruit sits inside the rim.
     path(im,[('M',(474,794)),('C',(478,813),(482,824),(494,828)),
              ('C',(511,835),(542,832),(555,825)),('L',(566,795)),('L',(474,794))],fill='#bc955f')
@@ -487,10 +504,37 @@ def mushroom(im,x,y,r,color):
     ellipse(im,x+r*.26,y-r*.49,r*.11,r*.07,'#e8d5ab')
 
 
+PROTECT_MARGIN=12
+PROTECTED_SHAPES=[FOX_TAIL,FOX_BODY,FOX_HEAD,
+                  RABBIT_BODY,RABBIT_HEAD,*RABBIT_EARS,
+                  DEER_BODY,DEER_NECK,DEER_HEAD,*DEER_EARS,
+                  SQUIRREL_TAIL,SQUIRREL_BODY,SQUIRREL_HEAD,
+                  [('M',(431,825)),('L',(446,958)),('L',(596,958)),('L',(619,825))],
+                  [('M',(352,772)),('L',(399,801)),('L',(454,818)),('L',(439,837)),('L',(391,828))]]
+PROTECTED_ELLIPSES=[(525,826,95,27),(514,1050,103,78),(644,1079,10,8),(665,1097,12,12),
+                    (308,941,40,14),(709,922,55,16)]
+PROTECTED_LEGS=[((570,680),(564,780)),((595,696),(592,791)),((642,696),(659,789)),((660,689),(687,781))]
+
+
+@lru_cache(maxsize=1)
+def protection_mask():
+    """Silhouettes of the animals and props, grown by PROTECT_MARGIN, at page scale."""
+    im=Image.new('L',SIZE)
+    d=ImageDraw.Draw(im)
+    for shape in PROTECTED_SHAPES:
+        d.polygon(sample(shape),fill=255)
+    for x,y,rx,ry in PROTECTED_ELLIPSES:
+        d.ellipse((x-rx,y-ry,x+rx,y+ry),fill=255)
+    for a,b in PROTECTED_LEGS:
+        d.line([a,b],fill=255,width=14)
+    return im.filter(ImageFilter.MaxFilter(PROTECT_MARGIN*2+1))
+
+
 def grass_allowed(x,y):
-    protected=[(95,505,469,1018),(608,485,811,948),(448,472,699,804),
-               (408,953,686,1120),(426,790,623,980)]
-    return not any(x0<=x<=x1 and y0<=y<=y1 for x0,y0,x1,y1 in protected)
+    width,height=SIZE
+    if not (0<=x<width and 0<=y<height):
+        return False
+    return protection_mask().getpixel((int(x),int(y)))==0
 
 
 def floor_detail(im):
@@ -517,7 +561,7 @@ def floor_detail(im):
     foreground=[((6,1236),(168,1095),6,'#557c55',1,14),((87,1247),(215,1165),5,'#7b925b',2,12),
                 ((989,1234),(814,1080),7,'#5b8055',3,13),((959,1237),(774,1210),5,'#809461',4,12)]
     for b,t,n,col,seed,width in foreground:
-        sprig(im,b,t,n,col,'#93a66b',seed,width)
+        sprig(im,b,t,n,col,'#93a66b',seed,width,'broad' if seed in (2,4) else 'frond')
     for root,tip,width,color in [((0,1168),(81,1054),37,'#486f4f'),((64,1230),(118,1111),36,'#597e52'),
                                 ((972,1212),(917,1059),37,'#618352'),((1000,1138),(955,1038),30,'#4f7550')]:
         leaf(im,root,tip,width,color,'#8ca067')
@@ -553,7 +597,9 @@ def full_scene():
              ('L',(418,831)),('L',(421,805))],fill='#e9cea0')
     for x in (433,439):
         path(im,[('M',(x,817)),('L',(x+3,827))],stroke='#b99a70',width=1)
-    apple(im,447,799,14,'#bb6550')
+    # The fox pushes an apple across the stump top; its shadow lies on the wood, inside the rim.
+    ellipse(im,457,834,13,3.6,'#a98c63')
+    apple(im,456,821,12,'#bb6550')
     path(im,[('M',(623,807)),('C',(613,812),(615,824),(627,826)),('L',(634,823)),('L',(631,806)),('L',(623,807))],fill='#eee2bf')
     hedgehog(im)
     floor_detail(im)

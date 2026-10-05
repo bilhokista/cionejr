@@ -2,12 +2,19 @@
 
 ## Before calling the samples finished
 
+Open:
+
 - Refine the woodland characters' proportions and local contour joins. Check each pose separately, then inside the scene.
-- Make the paw/fruit/table relationship clearer without increasing decoration.
-- Revisit the deer pose and distribution of attention within the gathering.
-- Improve foliage variation and its attachment to branches. Avoid filling unused areas with the same leaf recipe.
-- Replace coarse bounding-box protection with shape-aware masking when environment marks can overlap characters or props.
+- Revisit the deer's body pose; only its gaze has changed so far.
+- Check how the broad-leaf sprays attach to branches. The fronds and broad leaves share one stem recipe, so variation is still limited.
 - Evaluate a more deliberate painterly treatment; pigment noise and blur are not sufficient evidence of gouache craft.
+
+Addressed in the second pass (agent inspection only, not a viewer study):
+
+- Ground marks now avoid animal and prop silhouettes through a margin-grown mask instead of coarse rectangles.
+- The fox's apple rests on the stump top beside its paw, with a contact shadow on the wood, instead of hovering at the rim.
+- The deer lowers its gaze to the basket, so attention runs fox, basket, rabbit and deer.
+- Canopy and foreground sprays mix fronds with alternating broad leaves and per-leaf colour variation.
 
 The forest page received a provisional response that it was acceptable but still needed cleanup. This list is a development plan, not a claim that every item has been validated by an independent reviewer.
 

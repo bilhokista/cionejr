@@ -14,9 +14,11 @@ The portable renderer uses DejaVu Serif or Pillow's fallback for labels. Earlier
 
 The page contains six fictional woodland characters around a basket on a stump. It is full bleed and has no text. The layout was opened before the full scene was implemented. The squirrel/perch was moved to avoid a rabbit-ear tangency.
 
-Later inspections found grass marks on animals and on the stump, overlong sparrow legs, and a fox paw partly hidden by the tabletop. These were revised. Ground-mark exclusions are currently coarse protected rectangles; the tests cover representative points, not every possible composition.
+Later inspections found grass marks on animals and on the stump, overlong sparrow legs, and a fox paw partly hidden by the tabletop. These were revised.
 
-The page remains a work in progress. It needs more refinement in pose/contours, interaction, and environment treatment. See the [roadmap](roadmap.md).
+A second pass replaced the protected rectangles with a shape-aware mask (animal and prop silhouettes grown by a 12 px margin). The tests cover representative points inside the old rectangles, just outside contours, and on ears, paws and the stump rim; they do not cover every possible composition. The same pass moved the fox's apple onto the stump top, lowered the deer's gaze to the basket, and mixed broad leaves into the frond-only foliage. These changes were inspected by the agent at full resolution; no independent reviewer has assessed them.
+
+The page remains a work in progress. It still needs refinement in character proportions and contours and in how foliage joins the branches. See the [roadmap](roadmap.md).
 
 ## Evidence
 

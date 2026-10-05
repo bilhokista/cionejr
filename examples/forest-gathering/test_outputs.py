@@ -17,6 +17,20 @@ class Outputs(unittest.TestCase):
         for point in ((300,1180),(820,960),(205,1080)):
             self.assertTrue(module.grass_allowed(*point),point)
 
+    def test_ground_protection_follows_shapes_not_bounding_boxes(self):
+        spec = importlib.util.spec_from_file_location('forest_renderer',ROOT/'render.py')
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        # Inside the old rectangles but clear of every animal and prop.
+        for point in ((130,800),(420,1115),(690,1110)):
+            self.assertTrue(module.grass_allowed(*point),point)
+        # Just outside a contour: the margin still keeps marks off the silhouette.
+        for point in ((409,1051),(430,900)):
+            self.assertFalse(module.grass_allowed(*point),point)
+        # Ears, paws and the stump rim stay protected.
+        for point in ((650,520),(430,820),(623,815),(525,826)):
+            self.assertFalse(module.grass_allowed(*point),point)
+
     def test_full_page_exists_and_has_requested_ratio(self):
         path = ROOT/'forest-gathering.png'
         self.assertTrue(path.exists(), 'Full illustration not rendered')
