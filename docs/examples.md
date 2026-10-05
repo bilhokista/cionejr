@@ -2,37 +2,25 @@
 
 ## Bird treatments
 
-The three birds share a stylized right-facing perching pose. Their crown, cheek patch, and dark throat were informed by Laitche's public-domain Osaka photograph of a Eurasian tree sparrow. The perched pose and rendering are adaptations, not an anatomical identification plate.
+All eight birds share one stylized right-facing perching pose, built once in `examples/bird-styles/render.py` and restyled. Their crown, cheek patch, and dark throat were informed by Laitche's public-domain Osaka photograph of a Eurasian tree sparrow. The perched pose and rendering are adaptations, not an anatomical identification plate.
 
-The treatments use clean colour planes, one-ink negative cuts, and opaque brush-stroke fields. They are authored digital studies, not physical linocut prints or paintings. The painterly example is inspired by gouache: each field has a brush-cut edge with dry-brush gaps, overlapping strokes that follow the form (around round masses, along slender ones) and a matte surface. An earlier version used blurred masks and noise and read as airbrush. It still does not simulate pigment, water or paper physics.
+The first three are clean colour planes (geometric), one-ink negative cuts (linocut) and opaque brush-stroke fields (gouache). The painterly example is inspired by gouache: each field has a brush-cut edge with dry-brush gaps, overlapping strokes that follow the form (around round masses, along slender ones) and a matte surface. An earlier version used blurred masks and noise and read as airbrush. It still does not simulate pigment, water or paper physics.
 
-During development, an unintended panel-background rectangle was removed, toe separators were added to the one-ink version, the painterly marks were revised, and the geometric beak join was cleaned up. The first material render preceded separate layout inspection, so this example does not establish perfect adherence to the skill workflow.
+`extra_styles.py` adds five more: pixel art on a 150 x 126 grid with a checker dither, an ink line drawing with pressure-varied contours and hatching, a cut-paper collage with scissor facets and soft shadows, a stained-glass panel with lead lines, and a blueprint-style construction sheet. The blueprint carries no measurements, because none were taken.
 
-The portable renderer uses DejaVu Serif or Pillow's fallback for labels. Earlier development used Georgia; no font files are bundled. Regenerated label pixels can therefore differ from the initial development artifacts.
+During development, an unintended panel-background rectangle was removed, toe separators were added to the one-ink version, the painterly marks were revised, and the geometric beak join was cleaned up. The first pixel version filled only the left half of the frame and its beak merged with the face mask; the first stained-glass version drew lead lines for hidden parts of the wing. Not fixed: the ink wing outline is faint, the paper-cut belly shade is subtle, and the blueprint labels are small at sheet size. The first material render preceded separate layout inspection, so this example does not establish perfect adherence to the skill workflow.
 
-## More bird styles
-
-`examples/more-styles/` reuses the bird's construction and changes only the visual language: pixel art on a 150 x 126 grid with a checker dither, an ink line drawing with pressure-varied contours and hatching, a cut-paper collage with scissor facets and soft shadows, a stained-glass panel with lead lines, and a blueprint-style construction sheet.
-
-Issues found during inspection and fixed: the first pixel version filled only the left half of the frame and its beak merged with the face mask; the first stained-glass version drew lead lines for hidden parts of the wing. Not fixed: the ink wing outline is faint, the paper-cut belly shade is subtle, and the blueprint labels are small at sheet size. The blueprint carries no measurements, because none were taken. All five are agent-inspected digital studies, not physical media.
+All eight are authored digital studies, not physical prints, glass, paper or paint. The portable renderer uses DejaVu Serif or Pillow's fallback for labels. Earlier development used Georgia; no font files are bundled. Regenerated label pixels can therefore differ from the initial development artifacts.
 
 ## Forest meeting
 
-A second woodland page with a different event: an owl chairs a meeting from a stump while the others sit in a ring and listen. The owl, mouse, stump, log and glade are drawn from scratch; the fox, deer, rabbit, squirrel and hedgehog are the animals from the forest gathering, cut out and placed as sprites (the deer and hedgehog mirrored). They therefore carry that page's open issues.
+The page shows an owl chairing a meeting from a stump while a fox, deer, rabbit, squirrel, hedgehog and mouse sit in a ring and listen. It is full bleed and has no text. It replaces an earlier page of six animals around a fruit basket, which is kept in the git history.
 
-The grey layout was rendered and inspected before any material. It showed the fox's head overlapping the deer and the rabbit's ears covering the squirrel, so the cast was moved and scaled before the full render; a test now asserts that no two placed animals overlap. A first pass also let the frame trunks cut across the fox and squirrel, so the trunks are now drawn behind the cast. The mouse was first upscaled from a smaller drawing and looked soft; it is now drawn at final size.
+The owl, mouse, stump, log and glade are drawn in `render.py`. The fox, deer, rabbit, squirrel and hedgehog come from `cast.py`, are cut out and placed as sprites, and the deer and hedgehog are mirrored. Their construction was refined over earlier passes: a pear-shaped fox with shoulder and haunch, a deer with an S-curved neck and jointed legs, a rabbit shoulder fill, and foliage whose sprays and leaves all start on a branch point.
 
-Not fixed: the mouse's paw is a plain block on the leaf, the owl's leaf sits over its chest and not clearly in a wing, the hedgehog looks across the ring and not at the owl, and the deer's gaze is downward. All judgments are agent inspection, not a viewer study.
+The grey layout was rendered and inspected before any material. It showed the fox's head overlapping the deer and the rabbit's ears covering the squirrel, so the cast was moved and scaled before the full render; a test now asserts that no two placed animals overlap. A first pass also let the frame trunks cut across the fox and squirrel, so the trunks are now drawn behind the cast. The mouse was first upscaled from a smaller drawing and looked soft; it is now drawn at final size. Ground marks avoid the placed silhouettes through a margin-grown mask.
 
-## Forest gathering
-
-The page contains six fictional woodland characters around a basket on a stump. It is full bleed and has no text. The layout was opened before the full scene was implemented. The squirrel/perch was moved to avoid a rabbit-ear tangency.
-
-Later inspections found grass marks on animals and on the stump, overlong sparrow legs, and a fox paw partly hidden by the tabletop. These were revised.
-
-A second pass replaced the protected rectangles with a shape-aware mask (animal and prop silhouettes grown by a 12 px margin). The tests cover representative points inside the old rectangles, just outside contours, and on ears, paws and the stump rim; they do not cover every possible composition. The same pass moved the fox's apple onto the stump top, lowered the deer's gaze to the basket, and mixed broad leaves into the frond-only foliage. These changes were inspected by the agent at full resolution; no independent reviewer has assessed them.
-
-The page remains a work in progress. It still needs refinement in character proportions and contours and in how foliage joins the branches. See the [roadmap](roadmap.md).
+Not fixed: the mouse's paw is a plain block on the leaf, the owl's leaf sits over its chest and not clearly in a wing, the hedgehog looks across the ring and not at the owl, the deer's gaze is downward, the fox's forepaw reaches toward nothing, and the squirrel's belly patch has a hard corner at the leg. Character proportions are cartoon conventions and were not checked against species references. All judgments are agent inspection, not a viewer study. See the [roadmap](roadmap.md).
 
 ## Evidence
 

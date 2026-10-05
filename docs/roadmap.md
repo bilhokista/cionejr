@@ -4,21 +4,21 @@
 
 Addressed (agent inspection at full resolution; no independent reviewer or viewer study):
 
-- Ground marks avoid animal and prop silhouettes through a margin-grown mask instead of coarse rectangles.
-- The fox's apple rests on the stump top beside its paw, with a contact shadow on the wood.
-- The fox has a pear-shaped body with a shoulder, haunch and neck ruff instead of a capsule; the rabbit has a shoulder fill under the head.
-- The deer has an S-curved neck that flows into the chest and back, a lowered head and gaze toward the basket, and jointed legs with a hock bend.
-- Every foliage spray and large leaf now starts on a branch point; fronds and alternating broad leaves vary in colour per leaf.
 - The gouache bird uses opaque brush-cut fields, form-following strokes, dry-brush edges and flat tonal layers instead of blurred masks and noise.
+- The bird set now covers eight visual languages from one construction.
+- The woodland page is a staged meeting with a shared event; the layout was inspected before material, and a test rejects overlapping animals.
+- The cast has pear-shaped fox, S-necked deer with jointed legs, rabbit shoulder fill, and foliage anchored to branch points.
 
 Still open:
 
 - Character proportions are cartoon conventions, not checked against species references.
+- The fox's forepaw reaches toward nothing in the meeting, the hedgehog and deer do not look at the owl, and the mouse's paw is a plain block.
 - The squirrel's belly patch still has a hard corner at the leg.
 - Foliage stems share one construction; broad leaves differ only in shape and spacing.
 - The gouache study is not a simulation of the material; it is one opaque, brushy treatment of one pose.
+- Redraw the fox and hedgehog for the meeting instead of reusing poses made for a different scene.
 
-The forest page received a provisional response that it was acceptable but still needed cleanup. The lists above are a development record, not a claim that an independent reviewer has validated any item.
+The lists above are a development record, not a claim that an independent reviewer has validated any item.
 
 ## Skill evaluation
 

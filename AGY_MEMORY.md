@@ -41,6 +41,11 @@ cionejr is an experimental open-source illustration skill with reproducible Pyth
 - Ran all 13 evaluation cases once in fresh Sonnet 5.5 subagent sessions with the answer key withheld. 01 and 06 failed on v0.1.0 (detail over a known defect; species plate from memory). Added rules 9 and 10, bumped to v0.1.1, reruns passed. Record: evaluations/runs/2026-10-05.md. Fixtures: evaluations/fixtures/make_fixtures.py.
 - Limits: one run per case, agent grader, same model family, reruns tuned to the failures, case 12 leaked a host skill.
 
+## Consolidation (2026-10-05)
+
+- Replaced the main branch examples as requested: the forest-gathering page is removed (kept in git history) and forest-meeting is the only woodland page; its animal constructions moved to examples/forest-meeting/cast.py. The bird examples are one folder with eight styles: render.py (construction, geometric, linocut, gouache, one sheet) plus extra_styles.py (pixel art, ink line, paper cut, stained glass, blueprint).
+- The shape-aware ground-mark mask and its tests belonged to the removed page; the meeting uses a sprite-silhouette mask and a no-overlap test instead.
+
 ## Next
 
 Continue the craft work in docs/roadmap.md. Keep publication/technical checks separate from visual approval. Run behavioral evaluations with actual image inputs in separate agent sessions before claiming effectiveness.

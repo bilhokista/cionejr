@@ -1,8 +1,7 @@
 """A woodland meeting: an owl chairs from a stump while the others listen.
 
-New composition. It reuses the drawing helpers and the animal constructions of
-examples/forest-gathering, places them as sprites, and draws the owl, mouse,
-stump, log and glade from scratch.
+New composition. The animals come from cast.py and are placed as sprites; the owl, mouse, stump,
+log and glade are drawn here.
 """
 from functools import lru_cache
 from pathlib import Path
@@ -14,7 +13,7 @@ import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageOps
 
 ROOT = Path(__file__).parent
-_spec = importlib.util.spec_from_file_location('forest_base', ROOT.parent / 'forest-gathering' / 'render.py')
+_spec = importlib.util.spec_from_file_location('forest_cast', ROOT / 'cast.py')
 fg = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(fg)
 

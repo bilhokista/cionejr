@@ -10,7 +10,7 @@ An experimental illustration skill for coding agents. Build from basic shapes, i
 
 We want as many people as possible to help improve it. Everyone is welcome, and you do not need to write code. Show us where a drawing fails, suggest a clearer instruction, test the skill with your agent, or contribute a focused fix. Small contributions count. See [how to contribute](CONTRIBUTING.md).
 
-![Forest gathering storybook study](examples/forest-gathering/preview.png)
+![Woodland meeting storybook study](examples/forest-meeting/preview.png)
 
 ## What it does
 
@@ -43,12 +43,10 @@ All core instructions, supporting guides, worksheets, and evaluation cases are i
 
 ## Examples
 
-![Three digital bird treatments](examples/bird-styles/preview.png)
+![Eight digital bird treatments](examples/bird-styles/preview.png)
 
-- [Bird styles](examples/bird-styles/): geometric colour planes, digital linocut-like cuts, and a painterly treatment inspired by gouache.
-- [More styles](examples/more-styles/): pixel art, ink line, cut paper, stained glass and blueprint treatments of the same bird.
-- [Forest meeting](examples/forest-meeting/): an owl chairs a woodland meeting from a stump, full page, no text.
-- [Forest gathering](examples/forest-gathering/): six fictional woodland characters around a fruit basket, 2400 x 3000, without text.
+- [Bird styles](examples/bird-styles/): eight treatments of one perched bird: geometric colour planes, digital linocut-like cuts, a gouache-inspired opaque painting, pixel art, ink line, cut paper, stained glass and a blueprint-style construction sheet.
+- [Forest meeting](examples/forest-meeting/): an owl chairs a woodland meeting from a stump while six others listen; full page, 2400 x 3000, no text.
 
 These are work-in-progress studies. The forest page still needs refinement. The [example notes](docs/examples.md) distinguish actual checks from unresolved quality work.
 
@@ -64,16 +62,9 @@ python -m unittest discover -s tests -v
 python examples/bird-styles/render.py
 python examples/bird-styles/test_outputs.py
 
-python examples/more-styles/render.py
-python examples/more-styles/test_outputs.py
-
 python examples/forest-meeting/render.py --layout
 python examples/forest-meeting/render.py
 python examples/forest-meeting/test_outputs.py
-
-python examples/forest-gathering/render.py --layout
-python examples/forest-gathering/render.py
-python examples/forest-gathering/test_outputs.py
 ```
 
 Renderers write into their example directories and overwrite the corresponding sample PNGs. Copy files first if you want to preserve a revision. Bird labels use DejaVu Serif when available and Pillow's bundled fallback otherwise; font differences can change label pixels across machines. No proprietary font binaries are bundled.

@@ -457,27 +457,39 @@ def choose_label_font(size=36):
         return ImageFont.load_default(size=size)
 
 
+def load_extra_styles():
+    import importlib.util
+    spec=importlib.util.spec_from_file_location('bird_extra_styles',ROOT/'extra_styles.py')
+    module=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def main():
-    builders=[('geometric',geometric),('linocut',lino),('gouache',gouache)]
+    extra=load_extra_styles()
+    builders=[('geometric',geometric),('linocut',lino),('gouache',gouache)]+list(extra.STYLES)
     panels=[]
     for name,build in builders:
-        image=build().resize((1800,1520),Image.Resampling.LANCZOS)
+        image=build()
+        if image.size!=(1800,1520):
+            image=image.resize((1800,1520),Image.Resampling.LANCZOS)
         image.save(ROOT/f'{name}.png')
         panels.append(image)
     construction().resize((1800,1520),Image.Resampling.LANCZOS).save(ROOT/'construction.png')
-    sheet=Image.new('RGB',(3240,1440),rgb(PAPER))
+    columns=4
+    sheet=Image.new('RGB',(columns*1080,2240),rgb(PAPER))
     font=choose_label_font(36)
+    d=ImageDraw.Draw(sheet)
     for i,((name,_),image) in enumerate(zip(builders,panels)):
-        fit=image.resize((1044,882),Image.Resampling.LANCZOS)
-        sheet.paste(fit,(i*1080+18,233))
-        d=ImageDraw.Draw(sheet)
-        label=name.capitalize()
+        row,col=divmod(i,columns)
+        x,y=col*1080+18,row*1080+80
+        sheet.paste(image.resize((1044,882),Image.Resampling.LANCZOS),(x,y))
+        label=name.replace('-',' ').capitalize()
         box=d.textbbox((0,0),label,font=font)
-        x=i*1080+(1080-(box[2]-box[0]))//2
-        d.text((x,1210),label,font=font,fill='#4e5148')
-    sheet.save(ROOT/'three-styles.png')
-    sheet.resize((1080,480),Image.Resampling.LANCZOS).save(ROOT/'preview.png')
-    print('Rendered three styles, construction and preview')
+        d.text((x+(1044-(box[2]-box[0]))//2,y+900),label,font=font,fill='#4e5148')
+    sheet.save(ROOT/'eight-styles.png')
+    sheet.resize((1080,560),Image.Resampling.LANCZOS).save(ROOT/'preview.png')
+    print('Rendered eight styles, construction and preview')
 
 if __name__=='__main__':
     main()

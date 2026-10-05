@@ -1,7 +1,8 @@
-"""Five more authored digital treatments of the bird in examples/bird-styles.
+"""Five more authored treatments of the bird constructed in render.py.
 
 They reuse its construction (body, wing, tail, head masses) and change only the
 visual language. Each is a digital study, not a physical print, glass or paper.
+render.py renders them together with the first three styles.
 """
 from pathlib import Path
 import importlib.util
@@ -11,7 +12,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageChops
 
 ROOT = Path(__file__).parent
-_spec = importlib.util.spec_from_file_location('bird_base', ROOT.parent / 'bird-styles' / 'render.py')
+_spec = importlib.util.spec_from_file_location('bird_base', ROOT / 'render.py')
 base = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(base)
 
@@ -346,38 +347,3 @@ def blueprint():
 
 STYLES = [('pixel-art', pixel_art), ('ink-line', ink_drawing), ('paper-cut', paper_collage),
           ('stained-glass', stained_glass), ('blueprint', blueprint)]
-
-
-def contact_sheet(panels):
-    sheet = Image.new('RGB', (3240, 2240), base.rgb(PAPER))
-    font = base.choose_label_font(36)
-    d = ImageDraw.Draw(sheet)
-    for i, ((name, _), image) in enumerate(zip(STYLES, panels)):
-        row, col = divmod(i, 3)
-        offset = 540 if row == 1 else 0
-        x = offset + col * 1080 + 18
-        y = row * 1080 + 80
-        sheet.paste(image.resize((1044, 882), Image.Resampling.LANCZOS), (x, y))
-        label = name.replace('-', ' ').capitalize()
-        box = d.textbbox((0, 0), label, font=font)
-        d.text((x + (1044 - (box[2] - box[0])) // 2, y + 900), label, font=font, fill='#4e5148')
-    return sheet
-
-
-def main():
-    panels = []
-    for name, build in STYLES:
-        image = build()
-        if image.size != FINAL:
-            image = image.resize(FINAL, Image.Resampling.LANCZOS)
-        image.save(ROOT / f'{name}.png')
-        panels.append(image)
-        print('Saved', name)
-    sheet = contact_sheet(panels)
-    sheet.save(ROOT / 'five-styles.png')
-    sheet.resize((1080, 747), Image.Resampling.LANCZOS).save(ROOT / 'preview.png')
-    print('Saved five-styles.png and preview.png')
-
-
-if __name__ == '__main__':
-    main()
