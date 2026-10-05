@@ -5,7 +5,8 @@
 Addressed (agent inspection at full resolution; no independent reviewer or viewer study):
 
 - Seven of the eight bird styles and the whole woodland page are SVG masters, with named parts and PNGs rendered from them.
-- The woodland page is a staged meeting with a shared event and a cast drawn for it; the layout was inspected in greys before colour, and tests reject overlapping characters and characters that do not face the owl.
+- The woodland page is a staged meeting with a cast drawn for it. A separate coarse mass layout is now available through `--layout`; the finished greyscale value study is kept separate. This does not retroactively establish construction-stage inspection of the original page.
+- The squirrel head/body join and owl wing/grip/leaf contact were repaired and inspected locally and at reading size. Narrow raster-mask regressions cover those contacts. Existing mirror checks establish only horizontal facing, not gaze toward the owl.
 - The gouache bird uses opaque brush-cut fields, form-following strokes and dry-brush edges instead of blurred masks and noise.
 
 Still open:
@@ -21,7 +22,7 @@ The lists above are a development record, not a claim that an independent review
 
 ## Skill evaluation
 
-All 13 cases were run once on 2026-10-05; see [the run record](../evaluations/runs/2026-10-05.md). Next: repeat each case several times, on more than one model and host, with human grading and real drawings instead of synthetic fixtures. Rerun the eleven cases that passed on v0.1.0 against v0.1.1.
+All 13 cases were run once on 2026-10-05; see [the run record](../evaluations/runs/2026-10-05.md). Next: repeat each case several times, on more than one model and host, with human grading and real drawings instead of synthetic fixtures. Rerun the original 13 cases against v0.1.2; the current run record applies to earlier versions. Two new specifications cover layout/value-study confusion and false contact. They have not been run in fresh agent sessions.
 
 Do not claim improved drawing across styles from one successful study.
 

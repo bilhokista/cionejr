@@ -35,6 +35,8 @@ Copy the relevant sections into a project. Fill them from evidence, not guesses 
 - Focus and negative space:
 - Detail budget at final size:
 - For scenes: interactions, depth layers, and contact/occlusion order:
+- Critical part-to-part relationships and intentional separation exceptions:
+- Mass-layout file and actual inspection stage (separate from finished value study):
 
 ## Before detail
 
@@ -57,6 +59,8 @@ Decision to proceed or return to construction:
 - Whole image inspected:
 - Enlarged locations:
 - Intended display size checked:
+- Attachment crops inspected and both ends of each repair checked:
+- Value study inspected (does not substitute for a mass layout):
 - File checks actually performed:
 - Agent visual judgment:
 - Actual user/participant responses:

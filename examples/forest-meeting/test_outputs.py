@@ -63,7 +63,7 @@ class VectorMaster(unittest.TestCase):
             with self.subTest(character=name):
                 self.assertIn('translate(', groups[name].get('transform', ''))
 
-    def test_cast_faces_the_owl(self):
+    def test_cast_horizontal_facing_matches_the_stump_side(self):
         groups = {el.get('id'): el.get('transform') for el in self.root.iter(SVG_NS + 'g') if el.get('id') in CHARACTERS}
         owl_x = 500
         module = load_renderer()
@@ -98,7 +98,7 @@ class Placement(unittest.TestCase):
                 self.assertLess(xs.max(), mask.shape[1] - 1)
                 self.assertLess(ys.max(), mask.shape[0] - 1)
 
-    def test_the_owl_is_the_highest_character_and_sits_on_the_stump(self):
+    def test_the_owl_is_highest_and_horizontally_aligned_over_the_stump(self):
         tops = {name: int(np.nonzero(mask.any(axis=1))[0].min()) for name, mask in self.masks.items()}
         self.assertEqual(min(tops, key=tops.get), 'owl')
         ys, xs = np.nonzero(self.masks['owl'])

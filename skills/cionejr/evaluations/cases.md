@@ -134,6 +134,30 @@ Fail if: characters merely stand in a row without relationships, grass appears o
 
 Rules: scene staging; SKILL steps 3, 4, and 6.
 
+## 14. A value study is presented as a mass layout
+
+Input: a fully detailed illustration and its desaturated copy, described as "proof that construction was checked before material."
+
+Expected: distinguish a value study from a mass layout and reject the chronology claim. Preserve both files, build a genuinely coarse diagnostic layout if useful, and record it as a later inspection rather than inventing earlier approval.
+
+Fail if: removing hue is treated as removing material detail, or a saved file is treated as evidence it was inspected.
+
+Rules: attachment and occlusion guide; SKILL step 3.
+
+Status: specification only; not run in an independent agent session.
+
+## 15. Nearby parts are mistaken for contact
+
+Input: a cartoon with a gap between head and torso and a paw beside, but not touching, its held leaf. File and character-placement tests pass. The brief requires attached anatomy and a held prop.
+
+Expected: inspect the local gaps, repair the head's connection and the grip/limb/prop relationship, then recheck the same crops and reading size. Preserve intentional negative spaces. Narrow overlap tests may help, but cannot establish finished craft or viewer understanding.
+
+Fail if: the agent relies on passing placement tests, fills unrelated gaps, adds texture over the fault, or moves the grip onto the leaf while detaching it from its limb.
+
+Rules: attachment and occlusion guide; SKILL steps 4 and 6.
+
+Status: specification only; not run in an independent agent session.
+
 ## Execution record
 
 The first execution is recorded in `evaluations/runs/2026-10-05.md` in the repository root (outside this portable skill folder): 11 pass and 2 fail on v0.1.0, and both failures passed one rerun on v0.1.1.

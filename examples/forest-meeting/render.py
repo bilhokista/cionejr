@@ -1,10 +1,11 @@
 """A woodland meeting: an owl chairs from a stump while the others listen.
 
-The scene is written as SVG; the PNGs are rendered from it. `composition.png` is the
-same scene in greys, which is how placement, gaze and overlap are judged before
-any colour decisions.
+The scene is written as SVG; the PNGs are rendered from it. `composition.png` is a
+separate mass layout without finishing. `value-study.png` desaturates the finished
+scene; it cannot replace a construction-stage inspection.
 """
 from pathlib import Path
+import argparse
 import importlib.util
 import io
 import math
@@ -212,6 +213,48 @@ def foreground(d):
 
 # --- assembly -----------------------------------------------------------------------------------
 
+# Body and head envelopes in each character's local space, not final anatomy.
+MASS_PLAN = {
+    'deer': ((0, -122, 98, 48), (122, -270, 38, 24)),
+    'squirrel': ((0, -56, 35, 52), (30, -126, 24, 22)),
+    'fox': ((0, -76, 60, 78), (24, -188, 58, 42)),
+    'rabbit': ((0, -72, 60, 72), (40, -172, 42, 36)),
+    'hedgehog': ((-4, -50, 80, 54), (76, -40, 30, 25)),
+    'mouse': ((0, -34, 33, 34), (26, -62, 21, 18)),
+    'owl': ((0, -82, 64, 84), (0, -148, 58, 50)),
+}
+
+
+def layout_scene():
+    """Coarse placement envelopes. Inspect these before editing the finished cast."""
+    d = kit.Drawing(W, H, background='#e4e4e4', title='Woodland meeting mass layout',
+                    description='Body/head envelopes and support planes, without faces or material.')
+    d.greyscale = True
+    d.ellipse(500, 1010, 440, 245, fill='#d2d2d2')
+    with d.group(ident='layout-supports'):
+        d.rect(412, 590, 176, 190, fill='#9a9a9a')
+        d.ellipse(*STUMP, 88, 24, fill='#bbbbbb')
+        d.rect(656, 712, 292, 48, fill='#9a9a9a')
+        d.ellipse(662, 735, 20, 26, fill='#bbbbbb')
+    with d.group(ident='layout-masses'):
+        for name in (*BACK_TO_FRONT, 'owl'):
+            if name == 'owl':
+                x, y, scale, flip = STUMP[0], STUMP[1] - 4, 1.0, False
+            else:
+                _, x, y, scale, flip = CAST[name]
+            body, head = MASS_PLAN[name]
+            with d.group(ident=name, transform=f'translate({x} {y}) scale({-scale if flip else scale} {scale})'):
+                # Connect the envelopes and show the support line; no eyes or texture.
+                d.line(body[:2], head[:2], '#858585', min(body[2], head[2]) * .6)
+                bottom = min(body[1] + body[3], -8)
+                for side in (-1, 1):
+                    sx = body[0] + side * body[2] * .55
+                    d.line((sx, bottom), (sx, 0), '#858585', 10)
+                d.ellipse(*body, fill='#858585')
+                d.ellipse(*head, fill='#a5a5a5')
+    return d
+
+
 def scene(greyscale=False, only=None, with_background=True):
     """Build the drawing. `only` limits it to named characters (used to measure each one alone)."""
     d = kit.Drawing(W, H, title='Woodland meeting',
@@ -240,14 +283,23 @@ def to_png(drawing, size):
     return Image.open(io.BytesIO(data)).convert('RGB')
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--layout', action='store_true', help='Write only the mass layout; preserve finished art')
+    args = parser.parse_args(argv)
+    layout = layout_scene()
+    layout.save(ROOT / 'layout.svg')
+    to_png(layout, (1000, 1250)).save(ROOT / 'composition.png')
+    if args.layout:
+        print('Saved layout.svg and composition.png; inspect before finishing')
+        return
     full = scene()
     full.save(ROOT / 'forest-meeting.svg')
     image = to_png(full, FINAL)
     image.save(ROOT / 'forest-meeting.png', dpi=(300, 300))
     image.resize((600, 750), Image.Resampling.LANCZOS).save(ROOT / 'preview.png')
-    to_png(scene(greyscale=True), (1000, 1250)).save(ROOT / 'composition.png')
-    print('Saved forest-meeting.svg, forest-meeting.png, preview.png and composition.png')
+    to_png(scene(greyscale=True), (1000, 1250)).save(ROOT / 'value-study.png')
+    print('Saved forest-meeting.svg, forest-meeting.png, preview.png, composition.png and value-study.png')
 
 
 if __name__ == '__main__':

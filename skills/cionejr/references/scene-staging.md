@@ -15,7 +15,7 @@ For fantasy illustration, state that the characters and setting are fictional. D
 5. Establish depth layers: distant environment, characters/props, foreground.
 6. Render rough masses and open the result. Inspect overlap, negative space, relative scale, and attention direction before detail.
 
-Record layout status. If material was developed before this inspection, disclose the omission rather than claiming full workflow compliance.
+Record layout status. Use a coarse mass layout without faces or material marks. Keep it separate from a value study of the finished scene. If material was developed before this inspection, disclose the omission rather than claiming full workflow compliance.
 
 ## Character contract
 
@@ -28,6 +28,8 @@ Inspect each character alone and then in the scene. A locally polished character
 For interaction with a prop, state the front-to-back order:
 
 `body → table → paw in front of rim → fruit supported by paw`.
+
+Use [the attachment review](attachment-and-occlusion.md) to trace critical joins and both ends of each held-object interaction. A left/right mirror check does not establish gaze toward the speaker.
 
 A held object must contact a paw, mouth, or supporting tool. A shadow cannot replace contact. For perching poses, toes must reach the branch; do not lengthen legs merely because character and perch were positioned separately.
 

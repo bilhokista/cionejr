@@ -6,7 +6,7 @@ cionejr is an experimental open-source illustration skill with reproducible Pyth
 
 ## Initial distribution
 
-- Portable skill name/directory: cionejr, version 0.1.1 (0.1.0 at first publish), MIT.
+- Portable skill name/directory: cionejr, version 0.1.2 (0.1.0 at first publish), MIT.
 - Includes construction, craft, communication, scene staging, a worksheet, and behavioral evaluation specifications.
 - Samples: three bird render treatments and one woodland storybook page. Their limitations are documented; the forest example needs refinement.
 - Validation tooling checks frontmatter and local links. Renderer tests check output contracts and selected placement rules, not artistic quality.
@@ -51,6 +51,16 @@ cionejr is an experimental open-source illustration skill with reproducible Pyth
 - Dian pointed out the meeting scene still looked like the old page because its animals were reused, and asked for vector output since the base is shapes. Redrew all seven characters from scratch in examples/forest-meeting/characters.py and made the whole page an SVG; PNGs are rendered from the SVG with resvg-py (added to requirements.txt).
 - examples/svgkit.py is the shared SVG builder. Bird styles: seven SVG masters in examples/bird-styles/svg/ (vector_styles.py), gouache stays raster. The old extra_styles.py and cast.py are gone.
 - resvg sizes a canvas from the SVG's whole-number size, so a non-integer viewBox gave a 1796 px wide PNG; pixel art therefore uses a 1800 x 1520 viewBox with 12-unit cells.
+
+## Construction and contact pass after Claude's SVG update
+
+- Synced clean local main with origin/main at dcacc8e using a fast-forward; preserved Claude's vector examples and evaluation record.
+- Baseline: 25 repository tests, 11 bird checks, and nine forest checks passed. Agent inspection found an unintended squirrel head/body gap and an owl grip beside, rather than on, its leaf.
+- Added an actual mass-only layout and --layout command that preserves finished art. Opened composition.png before repairing contacts. The former finished greyscale layout is now explicitly a value study; no retroactive construction-stage approval is claimed.
+- Repaired the squirrel neck behind the torso and the owl wing/grip/leaf overlap. Saved dcacc8e baseline SVG/preview and same-area before/after crops; remaining forest defects stay open.
+- Added five construction tests. Layout and contact failures were observed before implementation; corrected a read-only Pillow test-mask issue and reconfirmed both contact failures against dcacc8e with original cast callables before confirming the repair.
+- Skill v0.1.2 adds an attachment/occlusion guide, distinct stage rules, and worksheet evidence fields. The 15 behavioral specifications include two new cases; neither new case nor the original 13 has been freshly evaluated for v0.1.2.
+- A second fetch found upstream commit 55afd08 (SVG colour_map hook). Fast-forwarded it without overwriting local work and reran checks: 31 repository tests plus 20 example checks passed, skill validation passed, 39 repository-local Markdown links resolved, and git diff --check passed.
 
 ## Next
 

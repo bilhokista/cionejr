@@ -4,7 +4,7 @@ description: >-
   Construct and critique drawings, illustrations, characters, and graphic compositions from basic shapes across scales. Use for reference drawing, sketching, geometric illustration, feather and material detail, storybook scenes, visual storytelling, style translation, and contextual taste decisions. Require style-specific craft checks before comparing alternatives.
 license: MIT
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
   status: "earliest-alpha"
   language: "en"
 ---
@@ -35,6 +35,7 @@ Resolve bundled paths from this skill directory. Do not assume internet access, 
 | Reviewing or repairing a result | [craft-review.md](references/craft-review.md) |
 | Style, character, composition, or taste | [communication-and-style.md](references/communication-and-style.md) |
 | Full scenes, multiple characters, or storybook pages | [scene-staging.md](references/scene-staging.md) |
+| Pasted-on parts, floating props, or uncertain contacts | [attachment-and-occlusion.md](references/attachment-and-occlusion.md) |
 | Citing methods or extending research | [sources-and-limits.md](references/sources-and-limits.md) |
 | Recording briefs and critique | [worksheet.md](templates/worksheet.md) |
 | Evaluating skill behavior | [cases.md](evaluations/cases.md) |
@@ -74,11 +75,11 @@ If references are inaccessible, state the limit and ask, in one short question, 
 
 Start with the action direction or dominant arrangement. Place the main masses and their connecting parts. Use operations on basic shapes and simple volumes where needed.
 
-Check silhouettes, negative space, relative size, and contact with the environment. For multiple characters, open the mass layout and inspect interactions and depth before material. Record that inspection. Construction lines may be rough; a neat outline must not conceal a faulty join.
+Check silhouettes, negative space, relative size, and contact with the environment. For multiple characters, open the mass layout and inspect interactions and depth before material. Use coarse envelopes and support planes without finishing detail. Desaturating a finished image is a value study, not a construction-stage layout. Record the actual inspection. Construction lines may be rough; a neat outline must not conceal a faulty join.
 
 ### 4. Review structure before detail
 
-Apply the structural checks in the craft guide. Record evidence and status: `ready for this stage`, `revise`, or `not yet assessed`.
+Apply the structural checks in the craft guide. For attachment or prop faults, use the attachment and occlusion guide to trace each required relationship and its layer order. Verify both ends of a repair, then recheck at reading size; proximity alone does not establish contact. Record evidence and status: `ready for this stage`, `revise`, or `not yet assessed`.
 
 If a relevant identity, action, perspective, or connection defect remains, return to construction. This applies when the user asked only for detail: a request for feathers, texture, or polish does not authorize leaving a pasted-on head or an unsupported limb in place (rule 9). For intentional deviations, state the deformation rule and inspect whether the result stays consistent and readable.
 

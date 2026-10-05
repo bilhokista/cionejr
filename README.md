@@ -6,7 +6,7 @@ An experimental illustration skill for coding agents. Build from basic shapes, i
 
 ## Earliest alpha: help us improve it
 
-**This is cionejr's earliest alpha (v0.1.1).** The sample illustrations still need cleanup, and the workflow has not yet been independently evaluated. Expect changes as we learn what works.
+**This is cionejr's earliest alpha (v0.1.2).** The sample illustrations still need cleanup, and the workflow has not yet been independently evaluated. Expect changes as we learn what works.
 
 We want as many people as possible to help improve it. Everyone is welcome, and you do not need to write code. Show us where a drawing fails, suggest a clearer instruction, test the skill with your agent, or contribute a focused fix. Small contributions count. See [how to contribute](CONTRIBUTING.md).
 
@@ -62,9 +62,13 @@ python -m unittest discover -s tests -v
 python examples/bird-styles/render.py
 python examples/bird-styles/test_outputs.py
 
+python examples/forest-meeting/render.py --layout
+# Open composition.png and inspect the mass layout before finishing.
 python examples/forest-meeting/render.py
 python examples/forest-meeting/test_outputs.py
 ```
+
+The forest's `composition.png` is a separate mass layout; `value-study.png` is the finished scene in greys. `--layout` writes only the layout and preserves finished artwork. See the [contact-repair review](examples/forest-meeting/review.md) for before/after evidence.
 
 The SVG is the master file and each PNG is rendered from it with [resvg](https://github.com/linebender/resvg) (the `resvg-py` package), so the two cannot drift apart. The gouache study is the exception: its character is brush texture, so it is raster only. Renderers write into their example directories and overwrite the corresponding sample files. Copy files first if you want to preserve a revision. Bird labels use DejaVu Serif when available and Pillow's bundled fallback otherwise; font differences can change label pixels across machines. No proprietary font binaries are bundled.
 
@@ -82,7 +86,7 @@ docs/                Sources, example status, and development priorities
 
 File tests check dimensions and basic output contracts. Skill validation checks YAML metadata and bundled links. Neither certifies anatomy, drawing competence, viewer understanding, or the effectiveness of an agent following the skill.
 
-The 13 behavioral cases were executed once each in fresh subagent sessions ([run record](evaluations/runs/2026-10-05.md)). Two failed on v0.1.0 and were fixed in v0.1.1; this is one run per case, graded by an agent, not a benchmark. There has been no controlled before/after study of an image generator. Third-party books are referenced by their public descriptions; they are not bundled or represented as fully read.
+The 13 behavioral cases were executed once each in fresh subagent sessions ([run record](evaluations/runs/2026-10-05.md)). Two failed on v0.1.0 and were fixed in v0.1.1; this is one run per case, graded by an agent, not a benchmark. Those sessions have not been repeated for v0.1.2. There has been no controlled before/after study of an image generator. Third-party books are referenced by their public descriptions; they are not bundled or represented as fully read.
 
 ## Contributing and license
 

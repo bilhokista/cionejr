@@ -126,6 +126,10 @@ def squirrel(d):
     d.path([('M', (-26, -44)), ('C', (-122, -34), (-146, -164), (-84, -206)), ('C', (-52, -228), (-20, -198), (-34, -172))],
            stroke=fur, width=38, ident='squirrel-tail')
     d.path([('M', (-30, -48)), ('C', (-116, -38), (-136, -158), (-82, -198)), ('C', (-54, -216), (-30, -194), (-40, -174))], stroke='#e2a96c', width=14, opacity=.85)
+    # Put the connector behind the torso so it cannot cut across the belly.
+    d.path([('M', (0, -80)), ('C', (2, -100), (10, -114), (24, -118)),
+            ('L', (42, -108)), ('C', (30, -94), (28, -78), (20, -72)), ('Z',)],
+           fill=fur, ident='squirrel-neck')
     d.ellipse(0, -56, 35, 52, fill=fur, ident='squirrel-body')
     d.ellipse(16, -50, 19, 36, fill=belly)
     d.ellipse(-4, -7, 26, 9, fill=deep)
@@ -224,5 +228,7 @@ def owl(d):
     # A leaf page, held up by a raised wing.
     d.path([('M', (-34, -8)), ('C', (-40, -60), (-16, -108), (22, -120)), ('C', (30, -80), (6, -30), (-34, -8)), ('Z',)], fill='#86a65e', ident='owl-leaf')
     d.path([('M', (-30, -12)), ('C', (-14, -50), (4, -90), (18, -116))], stroke='#c9d79a', width=1.6)
-    d.path([('M', (30, -112)), ('C', (58, -100), (62, -66), (36, -56)), ('C', (34, -76), (30, -96), (30, -112)), ('Z',)], fill=dark)
-    d.ellipse(28, -70, 8, 6, fill='#caa36a')
+    d.path([('M', (30, -112)), ('C', (58, -100), (62, -66), (18, -62)),
+            ('C', (16, -78), (26, -100), (30, -112)), ('Z',)],
+           fill=dark, ident='owl-raised-wing')
+    d.ellipse(18, -74, 10, 7, fill='#caa36a', ident='owl-grip')
