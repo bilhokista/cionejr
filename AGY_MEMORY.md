@@ -21,6 +21,7 @@ cionejr is an experimental open-source illustration skill with reproducible Pyth
 - All core skill instructions, supporting guides, worksheet, and 13 evaluation cases are now in English. The separate Indonesian README was removed to keep the initial distribution consistently English.
 - Bird labels and the geometric sample filename are English. Regeneration and all 26 local tests passed after the rename; the missing English output was observed to fail before implementation.
 - User-facing responses remain language-selectable; English documentation does not imply culturally universal taste judgments.
+- Checked 22 current repository-local Markdown links and staged whitespace. English-first commit 9d691ad passed Ubuntu/Windows CI, including both example renderers: https://github.com/bilhokista/cionejr/actions/runs/37275514501.
 
 ## Next
 
