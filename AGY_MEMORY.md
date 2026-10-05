@@ -46,6 +46,12 @@ cionejr is an experimental open-source illustration skill with reproducible Pyth
 - Replaced the main branch examples as requested: the forest-gathering page is removed (kept in git history) and forest-meeting is the only woodland page; its animal constructions moved to examples/forest-meeting/cast.py. The bird examples are one folder with eight styles: render.py (construction, geometric, linocut, gouache, one sheet) plus extra_styles.py (pixel art, ink line, paper cut, stained glass, blueprint).
 - The shape-aware ground-mark mask and its tests belonged to the removed page; the meeting uses a sprite-silhouette mask and a no-overlap test instead.
 
+## Vector pass (2026-10-05)
+
+- Dian pointed out the meeting scene still looked like the old page because its animals were reused, and asked for vector output since the base is shapes. Redrew all seven characters from scratch in examples/forest-meeting/characters.py and made the whole page an SVG; PNGs are rendered from the SVG with resvg-py (added to requirements.txt).
+- examples/svgkit.py is the shared SVG builder. Bird styles: seven SVG masters in examples/bird-styles/svg/ (vector_styles.py), gouache stays raster. The old extra_styles.py and cast.py are gone.
+- resvg sizes a canvas from the SVG's whole-number size, so a non-integer viewBox gave a 1796 px wide PNG; pixel art therefore uses a 1800 x 1520 viewBox with 12-unit cells.
+
 ## Next
 
 Continue the craft work in docs/roadmap.md. Keep publication/technical checks separate from visual approval. Run behavioral evaluations with actual image inputs in separate agent sessions before claiming effectiveness.

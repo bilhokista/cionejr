@@ -1,5 +1,6 @@
 """Three authored digital styles, not physical print/paint or a model benchmark."""
 from pathlib import Path
+import io
 import math
 import random
 import numpy as np
@@ -167,98 +168,8 @@ def face(image,dark,cheek,crown,painting=False):
     disk(image,699.5,217,2.1,'#fff8dd')
 
 
-def geometric():
-    image=Image.new('RGB',(W*S,H*S),rgb(PAPER))
-    supports(image,'#725947','#a4aa8c')
-    drawpath(image,BODY,fill='#ddd2b4')
-    drawpath(image,BELLY_SHADOW,fill='#b7b89b')
-    drawpath(image,TAIL,fill='#5b6658')
-    drawpath(image,BACK,fill='#bc774d')
-    drawpath(image,WING,fill='#745c45')
-    drawpath(image,FLIGHTS[0],fill='#c69a65')
-    drawpath(image,FLIGHTS[1],fill='#3e554b')
-    drawpath(image,FLIGHTS[2],fill='#a67c51')
-    drawpath(image,SCAPULAR,fill='#c58955')
-    drawpath(image,[('M',(444,355)),('C',(465,365),(494,364),(512,351))],stroke='#f2e5c4',width=6)
-    drawpath(image,[('M',(458,384)),('C',(476,381),(495,371),(510,363))],stroke='#e8d8b6',width=3.5)
-    face(image,'#2e433b','#f3e9ce','#a56140')
-    # Optical adjustments replace rigid perfect-circle head construction.
-    return image
 
 
-def lino():
-    paper=PAPER
-    ink='#4e392f'
-    image=Image.new('RGB',(W*S,H*S),rgb(paper))
-    supports(image,ink,ink)
-    drawpath(image,BODY,fill=ink)
-    # The cheek is a carved white shape; other light areas are directional cuts.
-    drawpath(image,CHEEK,fill=paper)
-    drawpath(image,EAR,fill=ink)
-    bodymask=shape_mask(BODY)
-    # Flank: long curved gouges fanning along the belly, not surface tiles.
-    def cuts(layer):
-        for i in range(26):
-            t=i/25
-            sx=397+208*t
-            sy=429-37*t
-            ex=442+214*t
-            ey=517-30*t
-            drawpath(layer,[('M',(sx,sy)),('C',(sx+3,sy+29),(ex-17,ey-12),(ex,ey))],
-                     stroke=paper,width=1.3+(.55 if i%4==0 else 0))
-        for i in range(10):
-            drawpath(layer,[('M',(644+i*6,331+i*2)),
-                            ('C',(650+i*6,357+i*3),(644+i*6,385+i*3),(632+i*6,411+i*3))],
-                     stroke=paper,width=1.3)
-    clipped(image,bodymask,cuts)
-    # Folded wing has a different cut grammar from the flank.
-    drawpath(image,WING,fill=ink)
-    drawpath(image,WING,stroke=paper,width=2.2)
-    wingmask=shape_mask(WING)
-    def wingcuts(layer):
-        for i in range(9):
-            sx=350+i*16
-            sy=449-i*2.4
-            ex=512+i*5
-            ey=336+i*5
-            drawpath(layer,[('M',(sx,sy)),('C',(sx+59,sy-21),(ex-36,ey+48),(ex,ey))],
-                     stroke=paper,width=1.8 if i%3 else 2.6)
-        for x,y,dx,dy in [(433,350,35,-28),(459,337,28,-25),(486,323,22,-15),(516,310,20,-11)]:
-            drawpath(layer,[('M',(x,y)),('C',(x+7,y-6),(x+dx-8,y+dy-3),(x+dx,y+dy))],stroke=paper,width=2.5)
-        drawpath(layer,[('M',(427,366)),('C',(452,379),(480,371),(503,353))],stroke=paper,width=5)
-        drawpath(layer,[('M',(443,390)),('C',(463,389),(491,374),(511,363))],stroke=paper,width=3.2)
-    clipped(image,wingmask,wingcuts)
-    # Crown gouges follow the crown arc and leave a solid boundary at the brow.
-    crownmask=shape_mask(CROWN)
-    def crowncuts(layer):
-        for i in range(17):
-            x=571+i*7.3
-            drawpath(layer,[('M',(x,239-i*.7)),
-                            ('C',(x+1,213-i*.6),(x+14,185-i*.2),(x+36,172+i*.65))],
-                     stroke=paper,width=1.45)
-    clipped(image,crownmask,crowncuts)
-    # Tail grain and narrow collar have long cuts instead of feather stamping.
-    for i in range(5):
-        drawpath(image,[('M',(148+i*4,574-i*3)),('C',(214,536-i*3),(277,502-i*4),(342,468-i*4))],
-                 stroke=paper,width=1.4)
-    drawpath(image,[('M',(571,270)),('C',(581,282),(600,298),(621,308))],stroke=paper,width=4)
-    drawpath(image,MASK,fill=ink)
-    drawpath(image,BIB,fill=ink)
-    drawpath(image,[('M',(735,210)),('L',(800,236)),('L',(741,250)),('L',(735,210))],fill=ink)
-    drawpath(image,[('M',(748,233)),('L',(785,237))],stroke=paper,width=1.3)
-    # Carve toe separators so the feet do not disappear into the same-colour perch.
-    drawpath(image,[('M',(542,640)),('C',(541,644),(539,646),(537,647))],stroke=paper,width=1.6)
-    drawpath(image,[('M',(630,637)),('C',(633,640),(633,644),(632,646))],stroke=paper,width=1.8)
-    drawpath(image,[('M',(646,636)),('C',(649,640),(649,644),(647,647))],stroke=paper,width=1.5)
-    disk(image,697,220,9.6,paper)
-    disk(image,697,220,6.5,ink)
-    disk(image,699,217,1.5,paper)
-    # Sparse print imperfections are clipped to ink, not a decorative full-image filter.
-    arr=np.array(image)
-    rng=np.random.default_rng(41)
-    select=(rng.random(arr.shape[:2])<.003)&(arr[:,:,0]<110)
-    arr[select]=rgb(paper)
-    return Image.fromarray(arr)
 
 
 def smooth_noise(rng,shape,cell):
@@ -457,39 +368,49 @@ def choose_label_font(size=36):
         return ImageFont.load_default(size=size)
 
 
-def load_extra_styles():
+def load_module(name,filename):
     import importlib.util
-    spec=importlib.util.spec_from_file_location('bird_extra_styles',ROOT/'extra_styles.py')
+    spec=importlib.util.spec_from_file_location(name,ROOT/filename)
     module=importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
 
 
+ORDER=['geometric','linocut','gouache','pixel-art','ink-line','paper-cut','stained-glass','blueprint']
+FINAL=(1800,1520)
+
+
 def main():
-    extra=load_extra_styles()
-    builders=[('geometric',geometric),('linocut',lino),('gouache',gouache)]+list(extra.STYLES)
-    panels=[]
-    for name,build in builders:
-        image=build()
-        if image.size!=(1800,1520):
-            image=image.resize((1800,1520),Image.Resampling.LANCZOS)
-        image.save(ROOT/f'{name}.png')
-        panels.append(image)
-    construction().resize((1800,1520),Image.Resampling.LANCZOS).save(ROOT/'construction.png')
+    vector=load_module('bird_vector_styles','vector_styles.py')
+    kit=vector.kit
+    (ROOT/'svg').mkdir(exist_ok=True)
+    panels={}
+    for name,build in vector.STYLES:
+        drawing=build()
+        drawing.save(ROOT/'svg'/f'{name}.svg')
+        data=kit.render_png(drawing.to_svg(),*FINAL)
+        flat=Image.open(io.BytesIO(data)).convert('RGB')
+        flat.save(ROOT/f'{name}.png')
+        panels[name]=flat
+    gouache_image=gouache().resize(FINAL,Image.Resampling.LANCZOS)
+    gouache_image.save(ROOT/'gouache.png')
+    panels['gouache']=gouache_image
+    construction().resize(FINAL,Image.Resampling.LANCZOS).save(ROOT/'construction.png')
     columns=4
     sheet=Image.new('RGB',(columns*1080,2240),rgb(PAPER))
     font=choose_label_font(36)
     d=ImageDraw.Draw(sheet)
-    for i,((name,_),image) in enumerate(zip(builders,panels)):
+    for i,name in enumerate(ORDER):
         row,col=divmod(i,columns)
         x,y=col*1080+18,row*1080+80
-        sheet.paste(image.resize((1044,882),Image.Resampling.LANCZOS),(x,y))
+        sheet.paste(panels[name].resize((1044,882),Image.Resampling.LANCZOS),(x,y))
         label=name.replace('-',' ').capitalize()
         box=d.textbbox((0,0),label,font=font)
         d.text((x+(1044-(box[2]-box[0]))//2,y+900),label,font=font,fill='#4e5148')
     sheet.save(ROOT/'eight-styles.png')
     sheet.resize((1080,560),Image.Resampling.LANCZOS).save(ROOT/'preview.png')
-    print('Rendered eight styles, construction and preview')
+    print('Rendered 7 SVG masters with PNGs, the raster gouache, construction and preview')
+
 
 if __name__=='__main__':
     main()

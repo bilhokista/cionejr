@@ -31,7 +31,6 @@ jobs:
         run: |
           python examples/bird-styles/render.py
           python examples/bird-styles/test_outputs.py
-          python examples/forest-meeting/render.py --layout
           python examples/forest-meeting/render.py
           python examples/forest-meeting/test_outputs.py
       - name: Check whitespace

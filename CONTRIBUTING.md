@@ -13,8 +13,8 @@ Run the skill validator and Python tests. Run an example's output checks when ch
 ```bash
 python tools/validate_skill.py
 python -m unittest discover -s tests -v
-python examples/bird-styles/test_outputs.py
-python examples/forest-meeting/test_outputs.py
+python examples/bird-styles/render.py && python examples/bird-styles/test_outputs.py
+python examples/forest-meeting/render.py && python examples/forest-meeting/test_outputs.py
 git diff --check
 ```
 

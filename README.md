@@ -45,8 +45,8 @@ All core instructions, supporting guides, worksheets, and evaluation cases are i
 
 ![Eight digital bird treatments](examples/bird-styles/preview.png)
 
-- [Bird styles](examples/bird-styles/): eight treatments of one perched bird: geometric colour planes, digital linocut-like cuts, a gouache-inspired opaque painting, pixel art, ink line, cut paper, stained glass and a blueprint-style construction sheet.
-- [Forest meeting](examples/forest-meeting/): an owl chairs a woodland meeting from a stump while six others listen; full page, 2400 x 3000, no text.
+- [Bird styles](examples/bird-styles/): eight treatments of one perched bird: geometric colour planes, linocut-style cuts, a gouache-inspired opaque painting, pixel art, ink line, cut paper, stained glass and a blueprint-style construction sheet. Seven have an editable SVG in [`svg/`](examples/bird-styles/svg/).
+- [Forest meeting](examples/forest-meeting/): an owl chairs a woodland meeting from a stump while six others listen; full page, 2400 x 3000, no text. Drawn as one SVG, [`forest-meeting.svg`](examples/forest-meeting/forest-meeting.svg), with every character a named group.
 
 These are work-in-progress studies. The forest page still needs refinement. The [example notes](docs/examples.md) distinguish actual checks from unresolved quality work.
 
@@ -62,18 +62,17 @@ python -m unittest discover -s tests -v
 python examples/bird-styles/render.py
 python examples/bird-styles/test_outputs.py
 
-python examples/forest-meeting/render.py --layout
 python examples/forest-meeting/render.py
 python examples/forest-meeting/test_outputs.py
 ```
 
-Renderers write into their example directories and overwrite the corresponding sample PNGs. Copy files first if you want to preserve a revision. Bird labels use DejaVu Serif when available and Pillow's bundled fallback otherwise; font differences can change label pixels across machines. No proprietary font binaries are bundled.
+The SVG is the master file and each PNG is rendered from it with [resvg](https://github.com/linebender/resvg) (the `resvg-py` package), so the two cannot drift apart. The gouache study is the exception: its character is brush texture, so it is raster only. Renderers write into their example directories and overwrite the corresponding sample files. Copy files first if you want to preserve a revision. Bird labels use DejaVu Serif when available and Pillow's bundled fallback otherwise; font differences can change label pixels across machines. No proprietary font binaries are bundled.
 
 ## Package contents
 
 ```text
 skills/cionejr/       Skill, construction/craft/scene guides, worksheet, evaluation cases
-examples/            Reproducible authored studies and output checks
+examples/            Reproducible authored studies, SVG masters and output checks
 tools/               Skill metadata and local-link validator
 tests/               Validator and example-portability tests
 docs/                Sources, example status, and development priorities

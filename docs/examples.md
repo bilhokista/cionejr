@@ -4,23 +4,32 @@
 
 All eight birds share one stylized right-facing perching pose, built once in `examples/bird-styles/render.py` and restyled. Their crown, cheek patch, and dark throat were informed by Laitche's public-domain Osaka photograph of a Eurasian tree sparrow. The perched pose and rendering are adaptations, not an anatomical identification plate.
 
-The first three are clean colour planes (geometric), one-ink negative cuts (linocut) and opaque brush-stroke fields (gouache). The painterly example is inspired by gouache: each field has a brush-cut edge with dry-brush gaps, overlapping strokes that follow the form (around round masses, along slender ones) and a matte surface. An earlier version used blurred masks and noise and read as airbrush. It still does not simulate pigment, water or paper physics.
+Seven styles are written as SVG in `vector_styles.py` and saved in `svg/`: geometric colour planes, a linocut-style one-ink print with carved paper-white cuts, pixel art, ink line, cut paper, stained glass and a blueprint-style construction sheet. The shapes are the same cubic curves the construction uses, so they stay curves in the SVG, and the main parts carry ids (`body`, `wing`, `crown`, `bib` and so on). Each PNG is rendered from its SVG with resvg. The eighth, gouache, is raster only: it is opaque brush-stroke fields with dry-brush edges and form-following strokes, and it does not survive as clean vector shapes.
 
-`extra_styles.py` adds five more: pixel art on a 150 x 126 grid with a checker dither, an ink line drawing with pressure-varied contours and hatching, a cut-paper collage with scissor facets and soft shadows, a stained-glass panel with lead lines, and a blueprint-style construction sheet. The blueprint carries no measurements, because none were taken.
+What changed when the styles became vector, compared with the earlier raster versions:
 
-During development, an unintended panel-background rectangle was removed, toe separators were added to the one-ink version, the painterly marks were revised, and the geometric beak join was cleaned up. The first pixel version filled only the left half of the frame and its beak merged with the face mask; the first stained-glass version drew lead lines for hidden parts of the wing. Not fixed: the ink wing outline is faint, the paper-cut belly shade is subtle, and the blueprint labels are small at sheet size. The first material render preceded separate layout inspection, so this example does not establish perfect adherence to the skill workflow.
+- Pixel art is exact: one `rect` per run of same-coloured pixels on a 150 x 126 grid, with a checker dither on the belly shade.
+- Ink line draws each contour as a filled variable-width outline, and hatching is clipped to its shape.
+- Cut paper gets its shadows and paper grain from SVG filters (blur, offset, turbulence). Renderers that ignore filters will show flat paper; the fibres of the raster version are gone.
+- Stained glass uses computed Voronoi panes for the background and per-piece gradients, without the mottling of the raster version.
+- Linocut lost the random print speckles; the carved cuts are unchanged.
+- The blueprint labels are live SVG text, so the PNG uses whichever sans-serif font the machine has.
 
-All eight are authored digital studies, not physical prints, glass, paper or paint. The portable renderer uses DejaVu Serif or Pillow's fallback for labels. Earlier development used Georgia; no font files are bundled. Regenerated label pixels can therefore differ from the initial development artifacts.
+The gouache study is inspired by gouache; it does not simulate pigment, water or paper physics. An earlier version used blurred masks and noise and read as airbrush.
+
+During development, an unintended panel-background rectangle was removed, toe separators were added to the linocut, and the geometric beak join was cleaned up. The first pixel version filled only the left half of the frame and its beak merged with the face mask; the first stained-glass version drew lead lines for hidden parts of the wing. Not fixed: the ink wing outline is faint, the paper-cut belly shade is subtle, and the blueprint labels are small at sheet size. The blueprint carries no measurements, because none were taken. The first raster render preceded separate layout inspection, so this example does not establish perfect adherence to the skill workflow.
+
+All eight are authored digital studies, not physical prints, glass, paper or paint. The sheet labels use DejaVu Serif or Pillow's fallback; no font files are bundled.
 
 ## Forest meeting
 
-The page shows an owl chairing a meeting from a stump while a fox, deer, rabbit, squirrel, hedgehog and mouse sit in a ring and listen. It is full bleed and has no text. It replaces an earlier page of six animals around a fruit basket, which is kept in the git history.
+The page shows an owl chairing a meeting from a stump while a fox, deer, rabbit, squirrel, hedgehog and mouse sit in a ring and listen. It is full bleed and has no text. It replaces two earlier woodland pages, which stay in the git history.
 
-The owl, mouse, stump, log and glade are drawn in `render.py`. The fox, deer, rabbit, squirrel and hedgehog come from `cast.py`, are cut out and placed as sprites, and the deer and hedgehog are mirrored. Their construction was refined over earlier passes: a pear-shaped fox with shoulder and haunch, a deer with an S-curved neck and jointed legs, a rabbit shoulder fill, and foliage whose sprays and leaves all start on a branch point.
+Everything is drawn as vector shapes in `characters.py` and `render.py` and saved as `forest-meeting.svg`; the PNGs are rendered from it. Each character is a named group with a `translate` and `scale` transform, mirrored where needed so it faces the owl, so any of them can be moved or deleted in a vector editor. The characters were redrawn for this scene rather than reused: the fox is seated with its head tipped up and a white-tipped tail, the deer stands with its neck raised, the rabbit sits up with one paw raised to ask a question, the squirrel holds an acorn on the log, the hedgehog lifts its snout, the mouse takes notes on a leaf, and the owl holds up a leaf page.
 
-The grey layout was rendered and inspected before any material. It showed the fox's head overlapping the deer and the rabbit's ears covering the squirrel, so the cast was moved and scaled before the full render; a test now asserts that no two placed animals overlap. A first pass also let the frame trunks cut across the fox and squirrel, so the trunks are now drawn behind the cast. The mouse was first upscaled from a smaller drawing and looked soft; it is now drawn at final size. Ground marks avoid the placed silhouettes through a margin-grown mask.
+`composition.png` is the same SVG rendered in greys. It was inspected before colour decisions, and the first placement showed the deer's head touching the stump and the fox too small to hold its corner, so the cast was moved and scaled. Tests render each character alone and assert that no two overlap, that each stays inside the page, that the owl is the highest and sits over the stump, and that every animal faces the owl.
 
-Not fixed: the mouse's paw is a plain block on the leaf, the owl's leaf sits over its chest and not clearly in a wing, the hedgehog looks across the ring and not at the owl, the deer's gaze is downward, the fox's forepaw reaches toward nothing, and the squirrel's belly patch has a hard corner at the leg. Character proportions are cartoon conventions and were not checked against species references. All judgments are agent inspection, not a viewer study. See the [roadmap](roadmap.md).
+Not fixed: the hedgehog's quills are a generated zigzag and read mechanical up close, the deer's hind legs are stiff, the mouse's body and belly read as a ring, the squirrel's tail is tall and nearly a spiral, and the grass keeps off the cast through simple boxes. Character proportions are cartoon conventions, not checked against species references. All judgments are agent inspection, not a viewer study. See the [roadmap](roadmap.md).
 
 ## Evidence
 
