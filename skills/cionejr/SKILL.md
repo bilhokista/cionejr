@@ -5,7 +5,7 @@ description: >-
 license: MIT
 metadata:
   version: "0.1.0"
-  status: "experimental"
+  status: "earliest-alpha"
   language: "en"
 ---
 
@@ -13,7 +13,7 @@ metadata:
 
 Build illustrations from basic shapes, then check their structure and meaning. Use circles, squares, and triangles to understand a subject, not as compulsory final contours. Execute every proposed style properly before comparing alternatives.
 
-This skill provides a workflow. It does not guarantee drawing competence, perfect results, or improved model output. A completed checklist alone cannot establish artistic quality.
+This is the earliest alpha of the skill. Its workflow has not yet been independently evaluated. It does not guarantee drawing competence, perfect results, or improved model output. A completed checklist alone cannot establish artistic quality.
 
 The documentation is in English. Respond in the language requested by the user and preserve any approved copy exactly.
 

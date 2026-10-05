@@ -1,5 +1,9 @@
 # Contributing
 
+cionejr is in its earliest alpha. We want help from as many people as possible, including people who draw and people trying an agent skill for the first time. You do not need to be a programmer or an expert to contribute.
+
+Start with [an issue](https://github.com/bilhokista/cionejr/issues) or a small pull request. A drawing critique with the brief and a marked problem area is useful. So is a report showing where an agent misunderstood an instruction. Include evidence when you can, and say what you could not check.
+
 Keep a change tied to an observable problem. For visual work, include the brief and identify the location of the defect. Explain why it matters for the intended style rather than describing it as insufficiently premium or modern.
 
 ## Before a pull request

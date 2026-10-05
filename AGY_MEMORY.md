@@ -23,6 +23,12 @@ cionejr is an experimental open-source illustration skill with reproducible Pyth
 - User-facing responses remain language-selectable; English documentation does not imply culturally universal taste judgments.
 - Checked 22 current repository-local Markdown links and staged whitespace. English-first commit 9d691ad passed Ubuntu/Windows CI, including both example renderers: https://github.com/bilhokista/cionejr/actions/runs/37275514501.
 
+## Earliest-alpha contribution invitation
+
+- Marked v0.1.0 explicitly as the earliest alpha in the README and skill; metadata status is earliest-alpha.
+- Added a visible invitation for as many people as possible to help improve the project. Drawing critiques and agent-use reports are welcome alongside focused code changes; programming experience is not required.
+- CONTRIBUTING.md now points newcomers to issues or small pull requests. Existing evidence, privacy, and licensing requirements remain in place.
+
 ## Next
 
 Continue the craft work in docs/roadmap.md. Keep publication/technical checks separate from visual approval. Run behavioral evaluations with actual image inputs in separate agent sessions before claiming effectiveness.

@@ -4,6 +4,12 @@ An experimental illustration skill for coding agents. Build from basic shapes, i
 
 [Skill](skills/cionejr/SKILL.md) · [Roadmap](docs/roadmap.md)
 
+## Earliest alpha: help us improve it
+
+**This is cionejr's earliest alpha (v0.1.0).** The sample illustrations still need cleanup, and the workflow has not yet been independently evaluated. Expect changes as we learn what works.
+
+We want as many people as possible to help improve it. Everyone is welcome, and you do not need to write code. Show us where a drawing fails, suggest a clearer instruction, test the skill with your agent, or contribute a focused fix. Small contributions count. See [how to contribute](CONTRIBUTING.md).
+
 ![Forest gathering storybook study](examples/forest-gathering/preview.png)
 
 ## What it does
