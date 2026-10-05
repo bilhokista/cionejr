@@ -61,6 +61,7 @@ cionejr is an experimental open-source illustration skill with reproducible Pyth
 - Added five construction tests. Layout and contact failures were observed before implementation; corrected a read-only Pillow test-mask issue and reconfirmed both contact failures against dcacc8e with original cast callables before confirming the repair.
 - Skill v0.1.2 adds an attachment/occlusion guide, distinct stage rules, and worksheet evidence fields. The 15 behavioral specifications include two new cases; neither new case nor the original 13 has been freshly evaluated for v0.1.2.
 - A second fetch found upstream commit 55afd08 (SVG colour_map hook). Fast-forwarded it without overwriting local work and reran checks: 31 repository tests plus 20 example checks passed, skill validation passed, 39 repository-local Markdown links resolved, and git diff --check passed.
+- Published source commit 96eacd3. Ubuntu and Windows CI passed with example regeneration: https://github.com/bilhokista/cionejr/actions/runs/37287542140. GitHub also reported existing Actions Node 20 deprecation annotations; these are maintenance work, not test failures. No independent viewer or behavioral validation is claimed.
 
 ## Next
 
