@@ -52,6 +52,7 @@ class Drawing:
         self._stack = [self.body]
         self._ids = set()
         self.greyscale = False
+        self.colour_map = None  # optional callable: hex colour -> hex colour, applied to every colour emitted
 
     # -- structure ---------------------------------------------------------
     def _emit(self, element):
@@ -69,6 +70,8 @@ class Drawing:
             return 'none'
         if colour.startswith('url(') or colour == 'none':
             return colour
+        if self.colour_map:
+            colour = self.colour_map(colour)
         return luminance_grey(colour) if self.greyscale else colour
 
     @contextmanager

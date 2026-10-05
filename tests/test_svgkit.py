@@ -49,6 +49,18 @@ class SvgKit(unittest.TestCase):
         d.rect(0, 0, 5, 5, fill='#ff0000')
         self.assertIn('fill="#4c4c4c"', d.to_svg())
 
+    def test_colour_map_recolours_fills_strokes_and_gradient_stops(self):
+        d = svgkit.Drawing(10, 10)
+        d.colour_map = lambda colour: '#00ff00'
+        d.rect(0, 0, 5, 5, fill='#ff0000', stroke='#0000ff')
+        fill = d.linear_gradient([(0, '#111111'), (1, '#eeeeee')])
+        d.rect(0, 5, 5, 5, fill=fill)
+        svg = d.to_svg()
+        self.assertNotIn('#ff0000', svg)
+        self.assertNotIn('#0000ff', svg)
+        self.assertNotIn('#111111', svg)
+        self.assertIn('fill="#00ff00"', svg)
+
     def test_render_png_uses_the_requested_size(self):
         d = svgkit.Drawing(100, 50, background='#336699')
         d.circle(50, 25, 20, fill='#ffffff')
