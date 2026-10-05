@@ -10,6 +10,12 @@ During development, an unintended panel-background rectangle was removed, toe se
 
 The portable renderer uses DejaVu Serif or Pillow's fallback for labels. Earlier development used Georgia; no font files are bundled. Regenerated label pixels can therefore differ from the initial development artifacts.
 
+## More bird styles
+
+`examples/more-styles/` reuses the bird's construction and changes only the visual language: pixel art on a 150 x 126 grid with a checker dither, an ink line drawing with pressure-varied contours and hatching, a cut-paper collage with scissor facets and soft shadows, a stained-glass panel with lead lines, and a blueprint-style construction sheet.
+
+Issues found during inspection and fixed: the first pixel version filled only the left half of the frame and its beak merged with the face mask; the first stained-glass version drew lead lines for hidden parts of the wing. Not fixed: the ink wing outline is faint, the paper-cut belly shade is subtle, and the blueprint labels are small at sheet size. The blueprint carries no measurements, because none were taken. All five are agent-inspected digital studies, not physical media.
+
 ## Forest gathering
 
 The page contains six fictional woodland characters around a basket on a stump. It is full bleed and has no text. The layout was opened before the full scene was implemented. The squirrel/perch was moved to avoid a rabbit-ear tangency.

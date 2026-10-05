@@ -46,6 +46,7 @@ All core instructions, supporting guides, worksheets, and evaluation cases are i
 ![Three digital bird treatments](examples/bird-styles/preview.png)
 
 - [Bird styles](examples/bird-styles/): geometric colour planes, digital linocut-like cuts, and a painterly treatment inspired by gouache.
+- [More styles](examples/more-styles/): pixel art, ink line, cut paper, stained glass and blueprint treatments of the same bird.
 - [Forest gathering](examples/forest-gathering/): six fictional woodland characters around a fruit basket, 2400 x 3000, without text.
 
 These are work-in-progress studies. The forest page still needs refinement. The [example notes](docs/examples.md) distinguish actual checks from unresolved quality work.
@@ -61,6 +62,9 @@ python -m unittest discover -s tests -v
 
 python examples/bird-styles/render.py
 python examples/bird-styles/test_outputs.py
+
+python examples/more-styles/render.py
+python examples/more-styles/test_outputs.py
 
 python examples/forest-gathering/render.py --layout
 python examples/forest-gathering/render.py
