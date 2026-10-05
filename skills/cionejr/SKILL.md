@@ -1,114 +1,115 @@
 ---
 name: cionejr
 description: >-
-  Construct and critique drawings, illustrations, characters, and graphic compositions from basic shapes across scales. Use for sketching, drawing from references, geometric illustration, feather or material detail, visual storytelling, style translation, and contextual taste decisions. Enforce style-specific craft checks before comparing alternatives. Indonesian triggers include menggambar, bentuk dasar, sketsa, bulu, karakter, gaya ilustrasi, komunikasi visual, dan taste.
+  Construct and critique drawings, illustrations, characters, and graphic compositions from basic shapes across scales. Use for reference drawing, sketching, geometric illustration, feather and material detail, storybook scenes, visual storytelling, style translation, and contextual taste decisions. Require style-specific craft checks before comparing alternatives.
 license: MIT
 metadata:
   version: "0.1.0"
   status: "experimental"
+  language: "en"
 ---
 
 # cionejr
 
-Skill konstruksi ilustrasi, dari bentuk dasar ke adegan dan makna.
+Build illustrations from basic shapes, then check their structure and meaning. Use circles, squares, and triangles to understand a subject, not as compulsory final contours. Execute every proposed style properly before comparing alternatives.
 
-Bangun gambar yang sesuai tujuan. Gunakan lingkaran, persegi, dan segitiga sebagai alat memahami struktur, bukan bentuk akhir yang wajib dipertahankan. Setiap pilihan gaya harus dikerjakan dengan baik menurut tuntutan gayanya sebelum dibandingkan.
+This skill provides a workflow. It does not guarantee drawing competence, perfect results, or improved model output. A completed checklist alone cannot establish artistic quality.
 
-Skill ini memberi prosedur kerja. Ia tidak menjamin kemampuan menggambar, hasil sempurna, atau peningkatan kualitas model. Jangan menyatakan kelulusan hanya karena semua kotak checklist terisi.
+The documentation is in English. Respond in the language requested by the user and preserve any approved copy exactly.
 
-## Mulai dari permintaan yang sebenarnya
+## Identify the requested task
 
-- Jika diminta meneliti, mengkritik, atau menyusun skill, kerjakan itu. Jangan otomatis membuat gambar.
-- Jika diminta menggambar atau memperbaiki gambar, gunakan alur di bawah.
-- Jika diminta membandingkan gaya, periksa craft setiap kandidat lebih dulu.
-- Jika diminta belajar, pakai latihan pada [panduan konstruksi](references/construction.md). Kritik satu kemampuan sebelum menambah kesulitan.
-- Jika diminta plugin, pisahkan metodologi dari implementasi. Host dan cara mengedit hasil harus diketahui sebelum membuat integrasi.
+- For research, critique, or skill development, do that work. Do not automatically make an image.
+- For drawing or revision, follow the workflow below.
+- For style comparison, check each candidate's craft first.
+- For teaching, use the exercises in the construction guide. Address one weakness before increasing difficulty.
+- For plugins, separate methodology from implementation. Establish the host and editing workflow before building an integration.
 
-Baca referensi relatif terhadap folder skill ini. Jangan menganggap akses internet, editor grafis, atau model gambar selalu tersedia.
+Resolve bundled paths from this skill directory. Do not assume internet access, a graphics editor, or an image model is available.
 
-## Dokumen pendamping
+## Supporting documents
 
-| Kebutuhan | Baca sebelum bekerja |
+| Task | Read before working |
 |---|---|
-| Menggambar atau menjelaskan konstruksi | [construction.md](references/construction.md) |
-| Memeriksa atau memperbaiki hasil | [craft-review.md](references/craft-review.md) |
-| Gaya, karakter, komposisi, atau taste | [communication-and-style.md](references/communication-and-style.md) |
-| Adegan penuh, banyak karakter, atau halaman buku cerita | [scene-staging.md](references/scene-staging.md) |
-| Mengutip metode atau menambah riset | [sources-and-limits.md](references/sources-and-limits.md) |
-| Menyimpan brief dan hasil kritik | [worksheet.md](templates/worksheet.md) |
-| Menguji perilaku skill | [cases.md](evaluations/cases.md) |
+| Drawing or explaining construction | [construction.md](references/construction.md) |
+| Reviewing or repairing a result | [craft-review.md](references/craft-review.md) |
+| Style, character, composition, or taste | [communication-and-style.md](references/communication-and-style.md) |
+| Full scenes, multiple characters, or storybook pages | [scene-staging.md](references/scene-staging.md) |
+| Citing methods or extending research | [sources-and-limits.md](references/sources-and-limits.md) |
+| Recording briefs and critique | [worksheet.md](templates/worksheet.md) |
+| Evaluating skill behavior | [cases.md](evaluations/cases.md) |
 
-Untuk pekerjaan visual lengkap, baca panduan konstruksi, craft, dan komunikasi. Untuk adegan penuh, baca scene-staging juga. Untuk kritik terbatas, baca panduan craft dan bagian relevan saja. Jangan muat semua buku atau catatan jika tidak diperlukan.
+For a complete illustration, read construction, craft review, and communication. Read scene staging for full scenes. For a narrow critique, read craft review and the relevant sections. Do not load every research source unnecessarily.
 
-## Aturan yang tidak boleh dilewati
+## Rules that cannot be skipped
 
-1. Tentukan identitas subjek, aksi, dan konteks lihat sebelum detail. Burung generik boleh jika memang diminta; jangan mengaku akurat terhadap suatu spesies tanpa referensi.
-2. Pisahkan konstruksi datar dari konstruksi volume. Perspektif dan sambungan harus masuk akal untuk pendekatan yang dipilih.
-3. Perbaiki cacat besar pada skala tempat cacat muncul. Bulu tambahan tidak memperbaiki kepala yang salah sambung.
-4. Nilai distorsi menurut niat dan gaya. Abstraksi bukan kesalahan otomatis, tetapi label "stilasi" tidak membenarkan semua cacat.
-5. Periksa hasil yang benar-benar dirender. Jangan menyimpulkan mutu gambar dari kode, prompt, atau deskripsi saja.
-6. Semua kandidat harus melewati pemeriksaan craft masing-masing sebelum dibandingkan untuk taste. Kandidat yang belum layak diberi status revisi, bukan dinyatakan kalah gaya.
-7. Bedakan pemeriksaan file, penilaian visual agen, dan respons penonton. Satu jenis bukti tidak menggantikan yang lain.
-8. Simpan versi terdahulu dan cacat yang belum selesai. Jangan menulis ulang sejarah kritik menjadi klaim keberhasilan.
+1. Establish subject identity, action, and viewing context before detail. A generic bird is valid when requested; do not claim species accuracy without references.
+2. Separate flat-shape construction from volumetric construction. Perspective and joins must suit the chosen approach.
+3. Repair a defect at the scale where it occurs. Extra feathers cannot fix an incorrectly attached head.
+4. Judge distortion against intent and style. Abstraction is not automatically an error, but "stylized" cannot excuse every defect.
+5. Inspect the rendered result. Code, prompts, and descriptions cannot establish the image's quality.
+6. Every candidate must pass its own relevant craft checks before a taste comparison. Mark an unfinished candidate for revision rather than declaring its style inferior.
+7. Separate file checks, agent visual judgments, and real viewer responses. One kind of evidence cannot replace another.
+8. Preserve previous versions and unresolved defects. Do not rewrite earlier critique as proof of success.
 
-## Alur kerja
+## Workflow
 
-### 1. Kunci brief secukupnya
+### 1. Establish a sufficient brief
 
-Catat subjek dan tujuannya. Nyatakan apa yang perlu terbaca, oleh siapa, pada ukuran atau media apa. Pilih pendekatan: observasional, karakter rekaan, grafis geometris, atau dekoratif. Nyatakan tahap hasil: studi kasar atau hasil siap pakai.
+Record the subject and purpose. State what must be understood, by whom, at what size or in which medium. Choose an observational, fictional-character, geometric, or decorative approach. State whether the requested output is a rough study or a finished asset.
 
-Ambil konteks yang sudah diberikan. Tanyakan paling banyak dua hal yang benar-benar mengubah pekerjaan. Jika belum diketahui, tulis asumsi yang bisa dibalik. Jangan menebak spesies atau menciptakan bukti pasar. Untuk latihan pribadi, tujuan belajar sudah cukup; validasi komersial tidak diperlukan.
+Use context already supplied. Ask at most two questions that would materially change the work. For missing details, state reversible assumptions. Do not invent species identity or market evidence. A personal learning goal does not require commercial validation.
 
-### 2. Amati referensi dan ukur hubungan
+### 2. Observe references and measure relationships
 
-Pilih referensi yang mendukung pose serta ciri subjek. Catat asal dan izin penggunaan. Bedakan foto utama, referensi detail, dan inspirasi gaya.
+Choose references that support the pose and identifying features. Record provenance and reproduction rights. Separate the primary pose reference from detail references and style inspiration.
 
-Tulis hubungan yang bisa diperiksa: rasio massa, letak fitur terhadap kontur, arah sendi, dan tumpuan. Untuk subjek rekaan, tetapkan invariannya sendiri. Jangan mencampur anatomi dari spesies berbeda tanpa keputusan yang disengaja.
+Record checkable relationships: mass ratios, feature placement relative to contours, joint directions, and support. Define invariants for fictional subjects. Do not mix incompatible species anatomy without a deliberate decision.
 
-Jika referensi tidak dapat diakses, jelaskan batasnya. Boleh membuat studi generik yang diberi label; jangan mengklaim akurasi yang tidak bisa diperiksa.
+If references are inaccessible, state the limit. A labeled generic study is possible; unverifiable accuracy claims are not.
 
-### 3. Bangun massa dan aksi
+### 3. Construct masses and action
 
-Mulai dengan arah aksi atau susunan dominan. Letakkan massa utama, lalu bagian yang menghubungkannya. Gunakan operasi pada bentuk dasar dan, bila perlu, volume sederhana.
+Start with the action direction or dominant arrangement. Place the main masses and their connecting parts. Use operations on basic shapes and simple volumes where needed.
 
-Periksa siluet, ruang negatif, perbandingan besar-kecil, dan kontak dengan lingkungan. Untuk banyak karakter, buka layout massa dan periksa hubungan tindakan serta kedalaman sebelum material. Simpan bukti inspeksi layout. Garis konstruksi boleh kasar. Jangan membuat pertemuan massa yang salah tampak rapi lewat outline.
+Check silhouettes, negative space, relative size, and contact with the environment. For multiple characters, open the mass layout and inspect interactions and depth before material. Record that inspection. Construction lines may be rough; a neat outline must not conceal a faulty join.
 
-### 4. Periksa struktur sebelum detail
+### 4. Review structure before detail
 
-Gunakan pemeriksaan struktur di panduan craft. Catat bukti dan status: `layak untuk tahap ini`, `revisi`, atau `belum dapat dinilai`.
+Apply the structural checks in the craft guide. Record evidence and status: `ready for this stage`, `revise`, or `not yet assessed`.
 
-Jika ada cacat pada identitas, aksi, perspektif, atau sambungan yang relevan dengan brief, kembali ke konstruksi. Jika sengaja menyimpang, jelaskan aturan distorsi dan lihat apakah hasilnya masih konsisten serta terbaca.
+If a relevant identity, action, perspective, or connection defect remains, return to construction. For intentional deviations, state the deformation rule and inspect whether the result stays consistent and readable.
 
-### 5. Kerjakan bagian dan material
+### 5. Develop parts and materials
 
-Bangun komponen menurut fungsi serta hubungan tumpang tindih. Turunkan bentuk ke detail yang dibutuhkan. Bulu penutup tidak digambar dengan resep yang sama seperti bulu terbang; tekstur mengikuti permukaan, bukan sekadar mengisi ruang kosong.
+Construct components according to their function and overlap. Add the required local detail. Coverts and flight feathers need different structures; texture should follow the surface rather than fill empty space.
 
-Tentukan anggaran detail berdasarkan tujuan dan ukuran akhir. Permintaan detail penuh tetap boleh dipenuhi setelah struktur beres. Jangan memperlakukan setiap piksel sebagai bentuk geometris kecil, kecuali grid piksel memang bagian dari medium pixel art.
+Set the detail budget from purpose and final size. Full detail is valid after structure is sound. Raster pixels are colour samples, not tiny geometric objects; pixel art may deliberately use grid-based clusters as its visual language.
 
-### 6. Render, lihat, lalu revisi
+### 6. Render, inspect, and revise
 
-Pilih alat berdasarkan kebutuhan hasil. Jangan memaksakan satu renderer untuk semua pendekatan. Render, buka hasil utuh, periksa bagian bermasalah pada pembesaran, lalu lihat pada ukuran pemakaian.
+Choose tools for the intended result. Do not force one renderer onto every approach. Open the whole image, enlarge risky areas, and inspect it at its intended display size.
 
-Lakukan revisi dengan catatan: bagian mana salah, dugaan penyebab, perubahan, dan bukti sesudahnya. Ubah penyebab yang teramati sebelum menambah dekorasi. Jika alat atau anggaran tidak memungkinkan perbaikan, berhenti dengan status revisi dan langkah lanjut yang spesifik. Jangan melanjutkan ke taste untuk menghindari cacat tersebut.
+Record the defect, suspected cause, change, and post-revision evidence. Address observed causes before adding decoration. If tools or budget prevent repair, stop with a revision status and a specific next step. Do not proceed to taste selection to avoid fixing a defect.
 
-### 7. Bandingkan hanya kandidat yang layak
+### 7. Compare only ready candidates
 
-Baca panduan komunikasi dan gaya. Kunci tujuan, aksi, serta kondisi tampilan yang sama. Gunakan standar craft sesuai gaya tiap kandidat; tingkat detail tidak harus sama.
+Use the communication and style guide. Hold purpose, action, and viewing conditions constant. Apply the appropriate craft standard to each style; equal detail is not required.
 
-Jika semuanya layak, bandingkan apa yang terbaca dan apa yang dikorbankan. Jelaskan pilihan dengan alasan terkait brief. Preferensi pengguna sah; jangan mengubahnya menjadi hukum universal atau skor taste objektif.
+Once all candidates are ready, compare what they communicate and what they sacrifice. Explain the choice against the brief. User preference is legitimate, but it is not a universal law or objective taste score.
 
-Jika ada kandidat belum layak, tahan keputusan taste. Kritik konsep awal boleh dilakukan untuk mencari masalah, tetapi bukan bukti bahwa satu gaya lebih baik.
+If a candidate is not ready, withhold the taste decision. Early concept critique may expose problems; it does not prove one style is better.
 
-### 8. Serahkan hasil dengan status bukti
+### 8. Deliver with an evidence status
 
-Sertakan hasil visual bila memang diminta, sumber referensi, dan catatan singkat tentang perubahan serta batas yang tersisa. Simpan worksheet untuk pekerjaan yang berlanjut. Perbarui memori proyek pada milestone jika proyek punya file memori.
+Provide visual output when requested, reference credits, and a short account of changes and remaining limits. Save a worksheet for continuing work. Update project memory at milestones when the project has a memory file.
 
-Nyatakan tepat apa yang diuji. "PNG bisa dibuka" berbeda dari "struktur sesuai referensi". Tanpa penonton yang benar-benar diuji, tulis "penilaian agen" atau "hipotesis komunikasi", bukan "penonton memahami".
+Name the checks actually performed. "The PNG opens" differs from "the structure matches the reference." Without a real viewer study, label communication claims as agent judgment or hypotheses.
 
-## Bentuk kritik yang wajib dipakai
+## Required critique format
 
-`Bagian/lokasi → yang terlihat → mengapa bermasalah untuk brief → perubahan → pemeriksaan ulang.`
+`Location → visible issue → why it matters for this brief → proposed change → recheck.`
 
-Contoh: "Di tengkuk, kepala masih berakhir sebagai busur terpisah. Untuk studi observasional ini sambungannya terlihat ditempel. Ubah transisi tengkuk mengikuti foto, lalu periksa siluet tanpa bulu."
+Example: "At the nape, the head still ends as a separate arc. In this observational study, the connection looks pasted on. Adjust the transition against the photo, then inspect the silhouette without feathers."
 
-Hindari "kurang premium", "lebih hidup", atau "taste-nya bagus" tanpa menunjukkan keputusan visual yang dimaksud.
+Do not use "more premium," "more alive," or "better taste" without identifying the visual decision involved.

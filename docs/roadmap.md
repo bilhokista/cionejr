@@ -19,7 +19,7 @@ Do not claim improved drawing across styles from one successful study.
 
 ## Packaging and integration
 
-- Add an English edition of the supporting guides without changing their evidence limits.
+- Keep the English documentation consistent as the workflow evolves; retain evidence limits in any future translations.
 - Document and test discovery on selected agent hosts.
 - Choose an editor/plugin host only when there is a concrete editing workflow to integrate.
 - Consider vector export after path structure and editability can be verified.

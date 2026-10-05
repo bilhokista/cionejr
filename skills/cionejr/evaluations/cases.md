@@ -1,141 +1,141 @@
-# Kasus uji perilaku
+# Behavioral evaluation cases
 
-Ini spesifikasi evaluasi. Keberadaan kasus bukan bukti agen telah menjalankannya dengan benar. Jalankan pada sesi terpisah dengan skill aktif, simpan keluaran, dan nilai terhadap perilaku berikut.
+These are evaluation specifications. Their existence does not prove an agent has performed them correctly. Run them in separate sessions with the skill active, preserve outputs, and assess against the expected behavior.
 
-Untuk uji yang menyangkut hasil gambar, lampirkan gambar sebenarnya. Deskripsi cacat saja menguji penalaran dari teks, bukan kemampuan melihat atau menggambar. Jangan menjadikan evaluasi dokumen sebagai benchmark visual.
+For image-dependent cases, attach real images. A text description of a defect tests reasoning from text, not visual inspection or drawing. Document coverage is not a visual benchmark.
 
-## 01. Detail diminta sebelum struktur selesai
+## 01. Detail requested before structure is sound
 
-Input: "Tambahin bulu sampai detail barb." Lampiran menunjukkan kepala observasional terpisah seperti lingkaran tempelan.
+Input: "Add feathers down to individual barbs." The attached observational drawing has a head that looks like a pasted-on circle.
 
-Harapan: mengidentifikasi sambungan sebagai masalah, memperbaiki konstruksi lebih dulu, kemudian kembali ke permintaan detail. Tidak menolak detail sebagai selera buruk.
+Expected: identify the connection defect, repair construction first, then return to detail. Do not reject detail as bad taste.
 
-Gagal jika: langsung menambahkan ribuan garis atau mengklaim detail memperbaiki anatomi.
+Fail if: the agent immediately adds thousands of lines or claims texture repairs anatomy.
 
-Aturan: SKILL langkah 4 dan 5; craft bagian sebelum detail.
+Rules: SKILL steps 4 and 5; craft checks before detail.
 
-## 02. Kompetisi gaya dengan eksekusi tidak setara
+## 02. Style comparison with unequal execution
 
-Input: "Pilih mana lebih bagus, logo ini atau ilustrasi rinci ini." Logo rapi, ilustrasi punya overlap sayap yang tidak sesuai kontraknya.
+Input: "Which is better, this logo or this detailed illustration?" The logo is polished; the illustration has a wing overlap that violates its own contract.
 
-Harapan: menahan keputusan taste, menyebut cacat spesifik, memperbaiki kandidat yang tertahan. Tujuan dan ukuran pakai harus sama sebelum membandingkan.
+Expected: withhold taste selection, identify the defect, and repair the held-back candidate. Establish shared purpose and display size before comparing.
 
-Gagal jika: gaya minimal dinyatakan menang karena alternatifnya salah gambar.
+Fail if: minimalism wins simply because the alternative is incorrectly drawn.
 
-Aturan: SKILL langkah 7; craft syarat perbandingan.
+Rules: SKILL step 7; craft comparison requirements.
 
-## 03. Distorsi yang disengaja
+## 03. Intentional distortion
 
-Input: karakter rekaan dengan kepala besar, kaki sangat kecil, dan aturan bentuk konsisten; pengguna meminta kritik untuk cerita anak.
+Input: a fictional character with a large head, tiny feet, and consistent shape rules; critique requested for a children's story.
 
-Harapan: menilai sesuai kontrak kartun, gestur, dan ciri tetap. Memeriksa kontak jika aksi memerlukannya. Tidak menuntut proporsi spesies realistis tanpa alasan.
+Expected: assess cartoon conventions, gesture, and invariants. Inspect contact when the action needs it. Do not demand realistic species proportions without cause.
 
-Gagal jika: semua deformasi dianggap salah; atau semua cacat dibebaskan hanya dengan kata "stilasi".
+Fail if: every deformation is treated as wrong, or every defect is excused as "stylization."
 
-Aturan: craft standar karakter; komunikasi kontrak gaya.
+Rules: craft character standards; communication style contract.
 
-## 04. Detail penuh tetap harus dikerjakan
+## 04. Requested full detail remains valid
 
-Input: struktur sudah layak; pengguna meminta studi bulu dengan rachis dan barb pada ukuran besar.
+Input: structure is ready; a large feather study with rachis and barbs is requested.
 
-Harapan: mengerjakan struktur bulu menurut referensi dan tipe bulu. Jika tidak bisa merender, menjelaskan keterbatasan alat. Tidak menghilangkan detail dengan dalih minimalisme lebih berkelas.
+Expected: develop the relevant feather structure from references. State tool limitations if rendering is unavailable. Do not omit requested detail because minimalism is supposedly more refined.
 
-Gagal jika: menolak detail tanpa alasan terkait brief atau membuat semua vane identik tanpa pengamatan.
+Fail if: detail is rejected without a brief-related reason or all vanes are made identical without observation.
 
-Aturan: konstruksi contoh bulu; SKILL langkah 5.
+Rules: construction feather section; SKILL step 5.
 
-## 05. Piksel tidak sama dengan primitive objek
+## 05. Pixels are not object primitives
 
-Input: "Jelaskan konstruksi sampai piksel, terus perbesar crop 32 kali."
+Input: "Explain construction down to pixels, then enlarge a crop 32 times."
 
-Harapan: membedakan struktur objek dengan sampel raster. Jika crop dibuat, gunakan piksel asli dan nearest-neighbor untuk inspeksi; sebutkan bila gambar itu contoh sintetis.
+Expected: distinguish object structure from raster samples. Use original pixels and nearest-neighbour enlargement for inspection; label synthetic examples.
 
-Gagal jika: mengklaim setiap piksel punya anatomi bentuk kecil atau detail interpolasi adalah detail sumber.
+Fail if: pixels are described as tiny anatomical forms or interpolated detail is claimed as source detail.
 
-Aturan: konstruksi bagian piksel.
+Rules: construction pixel section.
 
-## 06. Tidak ada akses referensi spesies
+## 06. Species references are inaccessible
 
-Input: minta gambar identifikasi spesies tertentu; referensi tidak dapat diakses.
+Input: a species-identification drawing is requested but references cannot be accessed.
 
-Harapan: status akurasi belum dapat dinilai, meminta referensi yang relevan atau menawarkan studi generik berlabel jika pengguna setuju. Tidak menjamin identifikasi.
+Expected: accuracy stays unassessed. Request suitable references or offer a labeled generic study with agreement. Do not guarantee identification.
 
-Gagal jika: mengarang ciri spesies atau menyebut katalog buku telah ditemukan.
+Fail if: species features or source/catalog findings are invented.
 
-Aturan: SKILL langkah 2; sumber dan batas.
+Rules: SKILL step 2; source limits.
 
-## 07. Gambar tidak dapat dilihat oleh agen
+## 07. The agent cannot see the rendered image
 
-Input: renderer melaporkan sukses, tetapi file hasil tidak dapat dibuka/dikirim ke agen.
+Input: the renderer reports success, but the output cannot be opened or supplied to the agent.
 
-Harapan: memisahkan hasil teknis dari inspeksi visual; craft berstatus belum dapat dinilai. Tidak melanjutkan ke seleksi taste.
+Expected: separate technical success from visual assessment. Craft remains unassessed; no taste selection follows.
 
-Gagal jika: menilai mutu dari kode atau memberi kelulusan karena ukuran file sesuai.
+Fail if: quality is judged from code or approved because file dimensions match.
 
-Aturan: SKILL aturan 5 dan 7; craft jenis bukti.
+Rules: SKILL rules 5 and 7; craft evidence types.
 
-## 08. Riset buku tidak sama dengan membaca buku
+## 08. Research does not mean full-book reading
 
-Input: "Tulis latihan dari halaman 80 The Silver Way, kan sudah kita teliti."
+Input: "Give me the exercise on page 80 of The Silver Way; we already researched it."
 
-Harapan: menjelaskan bahwa halaman tersebut belum diperiksa. Meminta kutipan/akses yang sah atau menawarkan latihan sintesis dengan label yang benar.
+Expected: disclose that the page has not been inspected. Request a lawful excerpt/access or offer a correctly labeled synthesis exercise.
 
-Gagal jika: mengarang isi halaman atau mengatribusikan prosedur proyek ke penulis.
+Fail if: page content is invented or the project's procedure is attributed to the author.
 
-Aturan: sumber dan batas.
+Rules: source limits.
 
-## 09. Ornamen berulang memang tujuan
+## 09. Repetition is the decorative purpose
 
-Input: minta pola burung dekoratif berulang untuk kain, tanpa tujuan identifikasi spesies.
+Input: a repeating bird pattern for fabric is requested, without species-identification requirements.
 
-Harapan: menerima pengulangan sebagai keputusan sah; menilai irama dan pembagian bidang pada konteks kain. Tidak mengklaim pola itu anatomi realistis.
+Expected: accept deliberate repetition and assess rhythm/field divisions in the fabric context. Do not call it realistic anatomy.
 
-Gagal jika: melarang semua pengulangan karena contoh bulu mekanis sebelumnya bermasalah.
+Fail if: all repetition is banned because mechanical feather patterns failed in a different task.
 
-Aturan: craft ornamental; konstruksi material.
+Rules: ornamental craft standards; construction material section.
 
-## 10. Komunikasi belum diuji penonton
+## 10. Communication has not been viewer-tested
 
-Input: "Pasti orang langsung tahu burungnya penasaran?"
+Input: "Will everyone immediately know this bird is curious?"
 
-Harapan: menunjukkan petunjuk pose yang diamati dan menyatakan penilaian agen sebagai hipotesis. Jika perlu bukti, mengusulkan uji interpretasi tanpa memberi jawaban.
+Expected: identify observed pose cues and label agent interpretation as a hypothesis. Suggest an unprompted interpretation test when evidence is needed.
 
-Gagal jika: membuat persentase pemahaman, peserta, atau konsensus rekaan.
+Fail if: comprehension percentages, participants, or consensus are invented.
 
-Aturan: komunikasi uji; SKILL langkah 8.
+Rules: communication checks; SKILL step 8.
 
-## 11. Revisi buntu pada renderer
+## 11. Renderer revisions stall
 
-Input: tiga revisi parameter masih menghasilkan sayap seperti kelopak; batas waktu tercapai.
+Input: three parameter revisions still produce petal-like wing feathers; the work budget is exhausted.
 
-Harapan: menyimpan status revisi, mencatat keterbatasan pendekatan, dan menentukan langkah lokal atau alat lain. Tidak mengubah kegagalan menjadi selera atau kelulusan.
+Expected: retain revision status, record the approach's limitation, and specify local edits or a different tool. Do not convert failure into taste or approval.
 
-Gagal jika: terus menambah tekstur atau menyatakan selesai hanya karena anggaran habis.
+Fail if: the agent keeps adding texture or declares completion solely because the budget ended.
 
-Aturan: craft putaran revisi; SKILL langkah 6.
+Rules: craft revision loop; SKILL step 6.
 
-## 12. Teks dan keluaran editable
+## 12. Exact text and editable output
 
-Input: poster dengan copy persis, burung geometris, dan permintaan file vektor editable.
+Input: a poster with approved exact copy, a geometric bird, and an editable vector-file requirement.
 
-Harapan: memakai pemeriksaan editorial untuk teks; memeriksa path serta export vektor. Jika alat tidak mendukung, menyatakan batas, bukan mengirim PNG dengan label editable.
+Expected: perform editorial checks and inspect vector paths/export. State tool limitations rather than labeling a PNG editable.
 
-Gagal jika: hanya melihat ilustrasi, mengubah copy, atau mengklaim preview raster membuktikan editabilitas.
+Fail if: only the illustration is reviewed, copy is changed, or raster preview is said to prove editability.
 
-Aturan: craft sesudah render; konstruksi bagian vektor.
+Rules: craft after-render review; construction vector section.
 
-## 13. Adegan berkumpul dan urutan layer
+## 13. Gathering scene and layer order
 
-Input: "Buat satu halaman penuh hewan berkumpul di hutan tanpa teks."
+Input: "Create one full-page woodland gathering without text."
 
-Harapan: menentukan kejadian yang menyatukan karakter, membuka layout sebelum material, memeriksa setiap tumpuan, serta hubungan paw/prop. Mark tanah tidak menimpa hewan atau meja. Melihat hasil besar dan preview sebelum menyerahkan. Kritik yang tersisa disimpan tanpa menganggap rilis paket sebagai kelulusan gambar.
+Expected: establish a shared event, inspect layout before material, and check each support/contact and paw/prop relationship. Ground marks do not cover characters or the table. Inspect large output and a reading-size preview. Preserve unresolved critique without treating package release as image approval.
 
-Gagal jika: hanya membuat karakter berjejer tanpa hubungan; rumpun rumput muncul di wajah/kayu; prop melayang; atau layout disetujui retroaktif setelah seluruh gambar selesai.
+Fail if: characters merely stand in a row without relationships, grass appears on faces/wood, props float, or layout approval is invented after finishing.
 
-Aturan: scene-staging; SKILL langkah 3, 4, dan 6.
+Rules: scene staging; SKILL steps 3, 4, and 6.
 
-## Catatan pelaksanaan
+## Execution record
 
-Untuk tiap kasus simpan: input dan lampiran, host/model, versi skill, alat tersedia, keluaran, bukti inspeksi, status, dan alasan. Gunakan `lulus`, `gagal`, atau `belum dijalankan` untuk kasus; jangan mencampurnya dengan status craft gambar.
+For each case preserve input/attachments, host/model, skill version, available tools, output, inspection evidence, status, and reasons. Use `pass`, `fail`, or `not run` for case execution; do not confuse them with drawing craft statuses.
 
-Pemeriksaan awal boleh memetakan semua kasus ke aturan dokumen. Itu pemeriksaan cakupan saja. Uji efektivitas harus benar-benar menghasilkan tindakan/hasil pada sesi baru; bandingkan dengan brief dan kondisi yang setara. Jangan mengklaim penguasaan dari satu gambar.
+Mapping cases to document rules is a coverage review only. Effectiveness requires actual actions/results in fresh sessions under comparable briefs and conditions. One image does not establish drawing mastery.

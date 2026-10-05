@@ -12,7 +12,7 @@ class ExamplePortability(unittest.TestCase):
         spec.loader.exec_module(module)
         self.assertTrue(hasattr(module,'choose_label_font'), 'Portable label font not implemented')
         font = module.choose_label_font(36)
-        box = font.getbbox('Geometris')
+        box = font.getbbox('Geometric')
         self.assertGreater(box[2]-box[0],0)
         self.assertGreater(box[3]-box[1],0)
 

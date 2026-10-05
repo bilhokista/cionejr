@@ -1,113 +1,113 @@
-# Pemeriksaan craft
+# Craft review
 
-## Cara memberi status
+## Assigning status
 
-Periksa terhadap brief, tahap pengerjaan, dan gaya yang ditetapkan.
+Assess against the brief, working stage, and agreed style.
 
-- `layak untuk tahap ini`: ada bukti visual yang memadai untuk melanjutkan tugas yang disebutkan. Tuliskan cakupannya.
-- `revisi`: ada cacat relevan yang bisa ditunjukkan. Catat lokasi dan perbaikan yang perlu dicoba.
-- `belum dapat dinilai`: belum melihat hasil, referensi kurang, atau konteks pemakaian belum tersedia.
-- `tidak relevan`: pemeriksaan memang tidak berlaku; tulis sebabnya. Contoh: tekstur anatomi tidak diperlukan pada simbol burung.
+- `ready for this stage`: sufficient visual evidence supports the stated next step. Record the scope.
+- `revise`: a relevant defect can be shown. Record its location and the change to try.
+- `not yet assessed`: the result has not been seen, references are insufficient, or the viewing context is missing.
+- `not applicable`: the check genuinely does not apply. Explain why; anatomical texture may be unnecessary for a bird symbol.
 
-Jangan mengubah `belum dapat dinilai` menjadi lulus. Pemeriksaan otomatis tidak memberi status craft. Kelulusan satu studi tidak boleh digeneralisasi ke semua objek atau gaya.
+Do not turn `not yet assessed` into a pass. Automated file checks cannot assign craft status. One successful study does not establish competence across every subject or style.
 
-## Sebelum detail
+## Before detail
 
-| Pemeriksaan | Cara melihat | Tindakan jika bermasalah |
+| Check | Inspection | Response to a defect |
 |---|---|---|
-| Identitas | Bandingkan fitur wajib dengan brief dan referensi | Perbaiki rasio atau landmark; kurangi klaim identifikasi bila referensi tidak cukup |
-| Aksi dan arah | Lihat massa dan sumbu tanpa tekstur | Perbaiki pose atau susunan sebelum finishing |
-| Sambungan | Perbesar pertemuan massa, lalu lihat utuh | Ubah transisi kontur dan arah bagian |
-| Volume atau logika datar | Periksa perspektif/overlap, atau hubungan bentuk grafis | Pilih sistem yang konsisten; jangan menyisipkan bayangan yang bertentangan |
-| Tumpuan | Periksa titik kontak dan posisi berat yang tersirat | Betulkan kaki/permukaan atau konteks; bayangan saja tidak memperbaiki kontak yang salah |
-| Ruang negatif | Lihat celah dan pertemuan kontur | Hindari tangensi yang tidak disengaja; pertahankan celah yang perlu terbaca |
+| Identity | Compare required features with brief/references | Repair ratios or landmarks; reduce identification claims when evidence is insufficient |
+| Action and direction | Inspect masses and axes without texture | Repair pose or arrangement before finishing |
+| Connections | Enlarge mass intersections, then view the whole | Adjust contour transitions and part directions |
+| Volume or flat-form logic | Check perspective/overlap or graphic relationships | Use a coherent system; avoid contradictory shading |
+| Support | Inspect contact points and implied weight | Repair feet/surface/context; a shadow alone cannot fix wrong contact |
+| Negative space | Inspect gaps and contour meetings | Avoid accidental tangencies; preserve necessary readable gaps |
 
-Siluet adalah salah satu pemeriksaan, bukan hukum bahwa semua gambar harus menjelaskan semua makna tanpa detail internal. Bila identifikasi memang memakai corak bulu, uji corak itu juga.
+Silhouette is one check, not a requirement that every image communicate all meaning without internal features. If identification depends on plumage markings, inspect those too.
 
-## Standar menurut pendekatan
+## Standards by approach
 
-### Studi observasional atau identifikasi
+### Observational or identification drawing
 
-- Rasio massa dan fitur pembeda harus mengikuti referensi yang sesuai.
-- Sambungan bagian dan tumpang tindih tidak boleh dibenarkan sebagai stilasi jika brief meminta akurasi.
-- Kelompok material mengikuti yang diamati; jangan mencampur spesies atau posisi anatomi.
-- Distinguisher tetap terbaca pada ukuran target.
-- Beri kredit jika menggambar setelah foto. Jangan menyatakan kemampuan membuat pose baru hanya dari hasil pemetaan foto.
+- Mass ratios and diagnostic features should follow appropriate references.
+- Do not excuse wrong connections or overlaps as stylization when the brief requires accuracy.
+- Material groups follow observation. Do not mix incompatible species or anatomy.
+- Required distinguishing features survive at target size.
+- Credit drawings made after photographs. Photo mapping does not prove construction of new poses.
 
-Pada spesies yang belum dikenal, penilaian agen bukan pengganti tinjauan ahli jika dipakai untuk identifikasi ilmiah.
+For unfamiliar species used in scientific identification, agent judgment cannot replace appropriate expert review.
 
-### Karakter ekspresif atau kartun
+### Expressive characters or cartoons
 
-- Proporsi, ciri tetap, dan aturan deformasi ditetapkan.
-- Pose serta gestur mengikuti aksi/motif yang dimaksud.
-- Distorsi boleh kuat; periksa apakah hasil tampak sengaja dan konsisten dengan bahasa visualnya.
-- Kontak dan overlap tetap perlu menjelaskan aksi, kecuali ruangnya memang nonfisik dan ditetapkan demikian.
-- Identitas bertahan pada pose lain sebelum mengklaim karakter siap dipakai berulang.
+- Establish proportions, invariants, and deformation rules.
+- Pose and gesture support the intended action or motivation.
+- Strong distortion is allowed. Inspect whether it reads as deliberate and consistent with the visual language.
+- Contact and overlap explain action unless nonphysical space is explicitly intended.
+- Check identity across another pose before claiming repeated-use character readiness.
 
-Mata besar atau aksesori lucu tidak otomatis membuktikan karakterisasi.
+Large eyes or cute accessories do not by themselves establish characterization.
 
-### Simbol, logo, atau ilustrasi geometris datar
+### Symbols, logos, or flat geometric illustration
 
-- Siluet, ruang negatif, dan kurva mendukung identitas yang diminta.
-- Pertemuan anchor, ketebalan, serta tangensi diperiksa. Koreksi optis boleh menyimpang dari geometri ideal.
-- Hasil kecil dan versi satu warna diperiksa bila relevan dengan pemakaiannya.
-- Detail yang hilang pada ukuran kecil bukan pembuktian bahwa gaya minimal selalu lebih baik; ia masalah ukuran target kandidat itu.
-- Jika diminta file editable, struktur path dan export harus benar-benar diperiksa.
+- Silhouette, negative space, and curves support the required identity.
+- Inspect anchor joins, thickness, and tangencies. Optical corrections may depart from ideal geometry.
+- Check small-size and monochrome versions when relevant to use.
+- Lost fine detail is a target-size issue for that candidate, not proof that minimalism is universally better.
+- For editable output, inspect actual path structure and export.
 
-Jangan menuntut anatomi bulu lengkap dari logo. Jangan mengaku kurva dibangun dari lingkaran hanya berdasarkan kemiripan visual.
+Do not demand full feather anatomy from a logo. Visual similarity alone cannot prove a curve was constructed from circles.
 
-### Sketsa gestural atau studi kasar
+### Gesture sketches or rough studies
 
-- Prioritas tahapnya jelas: arah, massa, atau pengamatan tertentu.
-- Garis pencarian dan bagian belum selesai boleh ada; bagian itu tidak dinilai sebagai finishing final.
-- Proporsi/aksi yang merupakan fokus latihan tetap diperiksa.
-- Sketsa yang layak mengembangkan pose belum tentu layak dipakai sebagai opsi final dalam perbandingan taste.
+- State the stage's focus: direction, mass, or a specific observation.
+- Searching lines and unfinished regions are allowed; they are not judged as final finishing.
+- Check the proportions/action that the exercise is intended to study.
+- A pose-development sketch may be ready for its next stage without being ready as a finished taste-comparison option.
 
-### Ilustrasi dekoratif atau ornamental
+### Decorative or ornamental illustration
 
-- Irama, pembagian area, dan hubungan pola dengan bentuk sesuai niat.
-- Pengulangan disengaja, bukan kegagalan menggambar variasi yang brief perlukan.
-- Kepadatan tidak merusak fokus atau keterbacaan yang diminta.
-- Nilai ornamen sebagai ornamen. Jangan mengklaim pola dekoratif sebagai representasi material yang akurat.
+- Rhythm, area divisions, and pattern/form relationships suit the intent.
+- Repetition is deliberate, not a failure to draw the variation the brief requires.
+- Density preserves required focus or readability.
+- Judge ornament as ornament. Do not call decorative patterns accurate material depiction.
 
 ### Pixel art
 
-- Cluster, arah tepi, dan pilihan warna terbaca pada grid target.
-- Detail tidak hanya bagus ketika diperbesar dengan interpolasi.
-- Keputusan grid disengaja; jaggies yang mengganggu tetap bisa menjadi cacat lokal.
-- Scaling dan export menjaga karakter grid yang diminta.
+- Clusters, edge directions, and colour choices read on the target grid.
+- Detail must not work only when enlarged through interpolation.
+- Grid decisions are deliberate; disruptive jaggies may still be local defects.
+- Scaling/export preserve the requested grid behavior.
 
-## Sesudah render
+## After rendering
 
-Lihat setidaknya hasil utuh dan ukuran target. Perbesar lokasi yang berisiko, bukan hanya mata atau bagian paling rapi.
+Inspect the whole result and target size. Enlarge risky locations, not just the eye or most polished region.
 
-Untuk grafis yang memuat teks, periksa copy persis, font, pemenggalan, dan keterbacaan. Gunakan skill typesetting yang tersedia untuk kebutuhan editorial. Jika tidak tersedia, tandai bagian belum dinilai dan jangan mengklaim pekerjaan editorial selesai. Craft ilustrasi tidak menjamin mutu tipografi.
+For graphics containing text, check exact copy, fonts, line breaks, and readability. Use an available typesetting skill for editorial work. If that review is unavailable, mark it unassessed rather than declaring the editorial asset finished. Illustration craft does not guarantee typography quality.
 
-Pisahkan catatan menjadi:
+Separate evidence:
 
-| Jenis bukti | Contoh klaim yang sesuai |
+| Evidence type | Appropriate claim |
 |---|---|
-| Pemeriksaan file | PNG terbuka, resolusi sesuai, crop memakai piksel asli |
-| Inspeksi visual | Penilaian agen: paruh terlalu panjang dibanding foto pada landmark tertentu |
-| Respons pengguna | Pengguna memilih versi ini untuk konteks yang disebutkan |
-| Uji penonton | Peserta yang benar-benar diuji menyebut aksi tanpa diberi jawabannya |
+| File checks | PNG opens; resolution matches; crop uses original pixels |
+| Visual inspection | Agent judgment: the beak is too long relative to specified photo landmarks |
+| User response | This user selected this version for the stated context |
+| Viewer study | Real participants described the action without being given the answer |
 
-Jangan menulis respons penonton rekaan. Inspeksi agen boleh mendukung hipotesis, tetapi bukan data pengguna.
+Never invent viewer responses. Agent inspection can support a hypothesis, but is not user data.
 
-## Putaran revisi
+## Revision loop
 
-1. Pilih cacat relevan yang dampaknya paling besar. Perbaiki struktur sebelum finishing jika keduanya bermasalah.
-2. Simpan versi awal. Catat lokasi, bukti, dan dugaan penyebab.
-3. Ubah hal yang terkait penyebab. Menambah gradasi tidak otomatis memperbaiki bentuk yang salah.
-4. Render ulang. Bandingkan pada lokasi dan ukuran yang sama.
-5. Catat hasil: membaik, tidak berubah, memburuk, atau belum bisa dinilai. Sertakan regresi baru jika ada.
+1. Select the highest-impact relevant defect. Repair structure before finishing when both are wrong.
+2. Preserve the earlier version. Record location, evidence, and suspected cause.
+3. Change something tied to that cause. Extra gradients cannot automatically repair form.
+4. Render again and compare the same location at the same size.
+5. Record improvement, no change, regression, or inability to assess. Include newly introduced defects.
 
-Jika renderer menghasilkan bulu berbentuk kelopak meskipun parameter sudah diganti, pertimbangkan pendekatan berbeda atau pengeditan lokal. Jangan mengulang variasi resep yang sama lalu melabelinya selesai.
+If parameter revisions still produce petal-like wing feathers, consider a different construction or local editing approach. Do not repeat the same recipe and relabel it finished.
 
-Pakai batas waktu atau putaran yang disepakati. Saat batas habis, simpan status revisi. Batas kerja tidak mengubah cacat menjadi kelulusan.
+Use an agreed time/iteration budget. When it expires, retain revision status. A budget limit cannot turn a defect into a pass.
 
-## Syarat masuk perbandingan taste
+## Entry requirements for taste comparison
 
-Setiap kandidat wajib punya brief yang sama untuk bagian yang dibandingkan, kontrak gaya yang jelas, hasil yang sudah dilihat, dan pemeriksaan craft yang relevan berstatus layak. Kualitas tiap kandidat tidak harus identik secara numerik; jangan memakai satu skor yang menguntungkan realism atau minimalisme.
+Every candidate needs a shared brief for the comparison, a clear style contract, an inspected result, and ready statuses for relevant craft checks. Do not require numerically identical quality or use a universal score that rewards realism or minimalism.
 
-Cacat yang mengubah pesan atau mengganggu standar pengerjaan gayanya menahan kandidat. Jika salah satu tertahan, keputusan taste belum dilakukan. Ketersediaan alat boleh dicatat sebagai batas produksi, tetapi jangan menyatakan gaya yang sulit dibuat sebagai lebih buruk secara artistik.
+A defect that alters the message or violates its style's execution standard holds that candidate back. If one is held back, withhold the taste decision. Production limits may be recorded, but difficulty with a tool does not make a style artistically inferior.

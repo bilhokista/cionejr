@@ -3,7 +3,7 @@ import unittest
 from PIL import Image, ImageChops
 
 ROOT = Path(__file__).parent
-NAMES = ('geometris', 'linocut', 'gouache')
+NAMES = ('geometric', 'linocut', 'gouache')
 
 class Outputs(unittest.TestCase):
     def test_three_standalone_images_are_valid(self):

@@ -409,7 +409,7 @@ def choose_label_font(size=36):
 
 
 def main():
-    builders=[('geometris',geometric),('linocut',lino),('gouache',gouache)]
+    builders=[('geometric',geometric),('linocut',lino),('gouache',gouache)]
     panels=[]
     for name,build in builders:
         image=build().resize((1800,1520),Image.Resampling.LANCZOS)

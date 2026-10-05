@@ -2,7 +2,7 @@
 
 An experimental illustration skill for coding agents. Build from basic shapes, inspect the drawing, and repair craft problems before comparing styles.
 
-[Bahasa Indonesia](README.id.md) · [Skill](skills/cionejr/SKILL.md) · [Roadmap](docs/roadmap.md)
+[Skill](skills/cionejr/SKILL.md) · [Roadmap](docs/roadmap.md)
 
 ![Forest gathering storybook study](examples/forest-gathering/preview.png)
 
@@ -33,7 +33,7 @@ Example requests:
 
 > Compare three styles only after each is properly executed for the shared brief.
 
-Instructions and supporting guides are currently in Indonesian; the routing description and this README are in English.
+All core instructions, supporting guides, worksheets, and evaluation cases are in English. User-facing responses follow the language requested by the user.
 
 ## Examples
 

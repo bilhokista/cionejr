@@ -1,94 +1,94 @@
-# Panduan konstruksi lintas skala
+# Construction across scales
 
-## Bentuk dasar dan operasi
+## Basic shapes and operations
 
-Gunakan keluarga bentuk sebagai alat analisis. Benda nyata tidak harus bisa dipecah tepat menjadi tiga jenis bangun.
+Use shape families to analyze a subject. Real objects do not need to decompose exactly into three primitive types.
 
-| Keluarga datar | Perubahan yang berguna | Penggunaan konstruksi |
+| Flat family | Useful transformations | Construction uses |
 |---|---|---|
-| Lingkaran | Elips, oval, busur; pemotongan dan pergeseran pusat | Massa bulat, lengkung, bidang yang terlihat miring |
-| Persegi | Persegi panjang, trapesium, bidang melengkung | Sisi benda, kerangka, area komposisi |
-| Segitiga | Baji, bentuk meruncing, perubahan ujung | Paruh, sudut aksi, ujung daun atau bulu |
+| Circle | Ellipse, oval, arc, cropping, shifted centres | Rounded masses, curves, tilted planes |
+| Square | Rectangle, trapezoid, curved plane | Object faces, frameworks, composition fields |
+| Triangle | Wedge, taper, altered tips | Beaks, directional accents, leaf or feather tips |
 
-Geser atau putar bentuk. Ubah proporsi, gabungkan, kurangi, dan ubah anchor bila perlu. Jangan menambah lingkaran hanya supaya gambar tampak punya konstruksi matematis. Jika kurva akhir lebih tepat dibuat bebas, lakukan dan jelaskan alasannya.
+Translate or rotate shapes. Change their proportions, combine or subtract them, and edit anchors when needed. Do not add circles merely to make a drawing appear mathematically constructed. Use a free curve when it better serves the result and explain the choice.
 
-Untuk volume, gunakan bola atau ellipsoid, balok, silinder, kerucut, serta baji. Ini pilihan alat, bukan padanan satu-ke-satu: sebuah segitiga dalam gambar tidak selalu menunjukkan kerucut.
+For volume, use spheres or ellipsoids, boxes, cylinders, cones, and wedges. These are tools, not one-to-one equivalents: a drawn triangle does not necessarily represent a cone.
 
-## Struktur datar dan volume
+## Flat structure and volume
 
-Pada grafis datar, periksa pertemuan kontur, ketebalan, dan hubungan ruang negatif. Perspektif realistis tidak harus muncul.
+For flat graphics, inspect contour joins, thickness, and negative-space relationships. Realistic perspective may be unnecessary.
 
-Pada gambar bervolume, catat orientasi tiap massa. Tunjukkan garis silang atau bidang bantu bila diperlukan. Bagian yang menempel harus punya arah sambungan. Periksa apakah bagian jauh terlihat lebih pendek atau tertutup secara konsisten. Garis bantu menjelaskan volume; jangan mengubahnya menjadi hiasan permanen jika tidak dibutuhkan.
+For volumetric drawing, establish the orientation of each mass. Use cross-contours or construction planes when useful. Attached parts need a coherent connection direction. Check whether distant parts are shortened or occluded consistently. Construction guides explain volume; do not retain them as decoration without purpose.
 
-Tidak perlu membuat setiap objek simetris. Perbedaan sisi dapat berasal dari perspektif, bahan, pose, atau keputusan stilasi.
+Objects need not be symmetric. Side differences may result from perspective, material, pose, or deliberate stylization.
 
-## Urutan pengamatan sebelum outline
+## Observation before outlines
 
-1. Tentukan arah aksi atau sumbu susunan. Untuk benda diam, tentukan orientasi bidang dominannya.
-2. Letakkan massa utama secara ringan. Ukur rasio antarbagian pada referensi, bukan dari resep generik.
-3. Amati penghubung: leher, sendi, tangkai, engsel, atau pertemuan bidang.
-4. Tentukan landmark. Letak mata dan pangkal paruh, misalnya, harus terkait bentuk kepala, bukan koordinat tempelan.
-5. Periksa siluet dan ruang negatif sebelum menebalkan garis.
-6. Baru masukkan bagian yang lebih kecil, kemudian material.
+1. Establish the action direction or arrangement axis. For a stationary object, establish the dominant plane orientation.
+2. Place main masses lightly. Measure ratios against references rather than a generic recipe.
+3. Observe connectors: necks, joints, stems, hinges, or plane intersections.
+4. Set landmarks. An eye and beak base should relate to the head's form, not float as unrelated coordinates.
+5. Check silhouettes and negative space before strengthening lines.
+6. Add smaller components, then material detail.
 
-Menyalin landmark dari foto adalah studi observasi. Menghasilkan pose baru dengan konstruksi adalah tugas berbeda. Catat jenis tugasnya; keberhasilan satu tidak membuktikan kemampuan yang lain.
+Mapping photo landmarks is an observational study. Constructing a new pose is a different task. Record which task you performed; success in one does not establish competence in the other.
 
-## Peta skala
+## Scale map
 
-| Tingkat | Pertanyaan | Bukti yang dicari |
+| Level | Question | Evidence to inspect |
 |---|---|---|
-| Komposisi | Hubungan apa yang penting? | Arah perhatian dan jarak antarobjek mendukung hubungan itu |
-| Objek | Benda apa, dalam keadaan apa? | Siluet dan massa membawa identitas serta aksi yang diperlukan |
-| Komponen | Bagaimana bagian tersambung? | Arah, pangkal, tumpuan, dan tumpang tindih dapat dijelaskan |
-| Material | Mengapa permukaan berbentuk begitu? | Lipatan, serat, atau kelompok bulu mengikuti bahan dan bentuk |
-| Detail lokal | Apa yang berguna pada ukuran akhir? | Detail memperjelas ciri, bukan menutupi cacat yang lebih besar |
-| Raster | Bagaimana bentuk disampel menjadi piksel? | Tepi, warna, dan alpha tetap sesuai saat hasil ditampilkan |
+| Composition | Which relationship matters? | Attention and spacing support that relationship |
+| Object | What is it, and in what state? | Silhouette and masses carry the required identity/action |
+| Component | How do parts connect? | Direction, attachment, support, and overlap can be explained |
+| Material | Why does the surface behave this way? | Folds, fibres, or feather groups follow form and material |
+| Local detail | What contributes at final size? | Detail clarifies features instead of masking larger defects |
+| Raster | How is the form sampled into pixels? | Edges, colour, and alpha survive actual display conditions |
 
-Jika cacat muncul pada tingkat objek, jangan membetulkannya dengan detail lokal. Jika hanya satu tepi raster bergerigi, tidak perlu menggambar ulang seluruh anatomi.
+Do not repair an object-level defect with local detail. Conversely, a single jagged raster edge need not require rebuilding the entire anatomy.
 
-## Contoh struktur bulu
+## Feather construction
 
-Mulai dari bagian tubuh dan pose sayap. Tentukan kelompok bulu yang terlihat pada referensi, bukan jumlah baris arbitrer.
+Start from the body region and wing pose. Identify visible feather groups from the reference instead of choosing arbitrary rows.
 
-- Bulu terbang punya arah pangkal-ke-ujung dan urutan overlap yang terkait sayap.
-- Bulu penutup menutupi pangkal struktur lain. Ukuran dan batas kelompoknya berbeda dari bulu terbang.
-- Bulu tubuh pendek mengikuti perubahan permukaan dan posisi mengembang atau merapat.
-- Pada studi satu bulu, tentukan pangkal, rachis, dua vane, dan taper. Bila detail barb diperlukan, arahnya mengikuti struktur bulu yang dipelajari.
+- Flight feathers have attachment-to-tip directions and overlaps tied to the wing.
+- Coverts cover the bases of other structures. Their dimensions and group boundaries differ from flight feathers.
+- Short body plumage follows the changing surface and whether feathers are fluffed or flattened.
+- For a single-feather study, establish the base, rachis, two vanes, and taper. If barbs are required, their direction follows the feather type being studied.
 
-Jangan memaksakan vane simetris atau pola barb identik. Periksa tipe bulu pada referensi. Jika spesimen tidak cukup jelas, nyatakan bahwa detail adalah model generik.
+Do not impose symmetric vanes or identical barb patterns. Inspect the relevant feather type. If the specimen is unclear, label the construction as generic.
 
-Pada gambar burung utuh, garis tiap barb mungkin tidak perlu tampak. Ornamen berbentuk bulu boleh berulang jika tujuan memang dekoratif; nilai iramanya sebagai ornamen, bukan mengaku itu anatomi burung.
+A whole-bird drawing may not need visible individual barbs. Repeated feather-shaped ornament is valid for decorative work; judge it as ornament, not accurate bird anatomy.
 
-## Material lain
+## Other materials
 
-- Kain: lipatan berhubungan dengan titik tarik, berat, dan kontak. Tidak semua permukaan perlu garis lipatan.
-- Daun: urat berhubungan dengan tangkai dan pembagian bidang daun. Referensi menentukan pola, bukan aturan semua daun sama.
-- Benda keras: bevel, sambungan panel, dan pantulan mengikuti bidang. Highlight tambahan tidak memperbaiki perspektif yang patah.
-- Rambut atau bulu mamalia: mulai dari massa dan arah pertumbuhan. Menambah helai satu per satu sebelum massa selesai sering membuat arah keseluruhan tidak jelas.
+- Cloth: folds relate to tension points, weight, and contact. Not every surface needs fold lines.
+- Leaves: veins relate to the stem and divisions of the leaf. References determine the pattern; not all leaves share one structure.
+- Hard surfaces: bevels, panel joins, and reflections follow planes. Extra highlights cannot fix broken perspective.
+- Hair or mammal fur: establish masses and growth directions first. Individual strands added prematurely can obscure the overall flow.
 
-Ini panduan membaca struktur, bukan simulasi fisik yang sudah divalidasi.
+These are structural observation guidelines, not validated physical simulations.
 
-## Piksel dan hasil akhir
+## Pixels and output
 
-Piksel raster adalah sampel warna dengan kemungkinan alpha. Ia bukan miniatur objek atau wajib berbentuk lingkaran, persegi, dan segitiga.
+A raster pixel is a colour sample with possible alpha. It is not a miniature object that must contain a circle, square, or triangle.
 
-- Periksa hasil pada ukuran pemakaian. Resolusi tinggi tidak otomatis membantu versi kecil.
-- Untuk diagnosis sampel piksel, gunakan crop asli dan pembesaran nearest-neighbor. Jangan menyebut pembesaran interpolasi sebagai detail yang memang ada.
-- Untuk ilustrasi anti-aliased, lihat tepi pada latar yang benar, termasuk latar terang dan gelap jika transparansi digunakan.
-- Untuk pixel art, grid, pilihan warna, dan cluster memang keputusan bentuk. Jangan menerapkan antialias otomatis yang menghapus maksud medium.
-- Untuk vektor, periksa path yang benar-benar diekspor. Cek sambungan, clipping, dan bentuk pada ukuran akhir; preview raster saja tidak membuktikan editabilitas.
+- Inspect the intended display size. High resolution does not automatically improve a small version.
+- For pixel diagnosis, use an original crop enlarged with nearest-neighbour sampling. Interpolation does not reveal detail already present in the source.
+- For anti-aliased illustrations, inspect edges against the actual background. Check light and dark backgrounds when transparency is relevant.
+- For pixel art, the grid, palette, and clusters are deliberate form decisions. Do not automatically apply smoothing that erases the medium's intent.
+- For vector output, inspect the exported paths, joins, clipping, and final-size shapes. A raster preview cannot prove editability.
 
-## Latihan terarah
+## Focused exercises
 
-Pilih satu latihan sesuai kelemahan. Jangan menjanjikan penguasaan setelah sejumlah repetisi tertentu.
+Choose an exercise that targets the weakness. Do not promise mastery after a fixed number of repetitions.
 
-| Latihan | Batas kerja | Syarat lanjut |
+| Exercise | Scope | Requirement before progressing |
 |---|---|---|
-| Observasi massa | Satu referensi, tanpa tekstur | Rasio dan landmark relevan diperiksa terhadap referensi |
-| Siluet dan tumpuan | Tanpa detail internal | Aksi serta kontak yang dibutuhkan dapat dijelaskan dari bentuk |
-| Sambungan | Gambar satu pertemuan bagian dari dua sudut bila referensi tersedia | Transisi dan orientasi bagian tidak saling bertentangan |
-| Kelompok material | Satu area kecil, jangan seluruh tubuh | Kelompok berbeda tidak memakai motif universal yang sama |
-| Identitas karakter | Dua pose dengan ciri yang ditetapkan | Ciri tetap konsisten, aksi berubah dengan sengaja |
-| Hasil kecil | Render pada ukuran target yang disebutkan | Fitur wajib tidak hilang atau menyatu tanpa rencana |
+| Observe masses | One reference, no texture | Relevant ratios and landmarks checked against the reference |
+| Silhouette and support | No internal detail | Required action and contact explained through form |
+| Connections | One joint from two views when references exist | Transition and part orientations remain coherent |
+| Material groups | One local area, not the whole body | Different groups use appropriately different structures |
+| Character identity | Two poses with defined invariants | Identity stays consistent while action deliberately changes |
+| Small output | Render at a stated target size | Required features do not disappear or merge unintentionally |
 
-Kritik berdasarkan hasil yang dilihat. Jika latihan gagal, persempit masalah atau ganti cara menggambar. Jangan sekadar menambah jumlah detail maupun jumlah percobaan.
+Critique the observed result. If an exercise fails, narrow the problem or change the drawing method. More detail or more attempts alone may not address the cause.

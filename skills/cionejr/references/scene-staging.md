@@ -1,53 +1,53 @@
-# Adegan penuh dan halaman buku cerita
+# Full scenes and storybook pages
 
-## Pilih kejadian, bukan daftar objek
+## Choose an event, not an object list
 
-Tentukan satu kejadian yang menghubungkan karakter. Hewan berkumpul di hutan dapat berbagi buah, menunggu teman, atau membantu membawa sesuatu. Tulis apa yang masing-masing lakukan terhadap karakter/objek lain. Jangan hanya membuat enam hewan menghadap depan tanpa hubungan.
+Establish one event connecting the characters. Woodland animals might share fruit, wait for a friend, or help carry something. State what each does in relation to another character or object. Do not simply place six forward-facing animals beside each other without a relationship.
 
-Untuk ilustrasi dongeng, sebutkan bahwa karakter dan lingkungan rekaan. Jangan menjanjikan kecocokan ekosistem atau anatomi ilmiah jika referensi tidak mendukungnya.
+For fantasy illustration, state that the characters and setting are fictional. Do not promise ecosystem or scientific-anatomy accuracy without supporting references.
 
-## Layout sebelum material
+## Layout before material
 
-1. Tentukan rasio halaman, full bleed atau margin, dan apakah ada teks. Jangan menambah judul jika pengguna meminta ilustrasi penuh tanpa tulisan.
-2. Letakkan kejadian utama dan prop yang menyatukan adegan.
-3. Susun kelompok karakter menurut aksi. Bedakan siluet dan arah kepala; jangan membuat semua karakter memakai pose yang sama.
-4. Tempatkan lantai, permukaan duduk, atau ranting yang menopang mereka.
-5. Tentukan lapis ruang: latar jauh, karakter/prop, dan foreground.
-6. Render massa kasar dan buka gambarnya. Periksa overlap, ruang negatif, ukuran relatif, dan arah perhatian sebelum detail.
+1. Establish page ratio, full bleed or margins, and whether text is needed. Do not add a title when the user requests a full illustration without text.
+2. Place the main event and the prop that connects it.
+3. Arrange characters by action. Distinguish silhouettes and head directions; avoid giving every character the same pose.
+4. Place the ground, seating surfaces, or branches supporting them.
+5. Establish depth layers: distant environment, characters/props, foreground.
+6. Render rough masses and open the result. Inspect overlap, negative space, relative scale, and attention direction before detail.
 
-Simpan status layout. Jika langsung membuat material tanpa inspeksi tahap ini, catat keterlewatannya; jangan mengklaim seluruh alur telah dipenuhi.
+Record layout status. If material was developed before this inspection, disclose the omission rather than claiming full workflow compliance.
 
-## Kontrak karakter
+## Character contract
 
-Catat fitur pembeda dan aturan deformasi: telinga kelinci, ekor rubah, punggung landak, atau bentuk paruh. Hubungkan kepala ke leher/tubuh sesuai bahasa visual yang dipilih. Pose rekaan boleh antropomorfis, tetapi anggota tubuh harus bisa dilacak pangkal dan kontaknya.
+Record distinguishing features and deformation rules: rabbit ears, a fox tail, a hedgehog's back, or beak profile. Connect heads to necks/bodies within the chosen language. Fictional poses may be anthropomorphic, but limbs need traceable attachment and contact.
 
-Periksa setiap karakter sendiri, kemudian di dalam adegan. Karakter yang rapi secara terpisah bisa gagal setelah tangan tertutup meja atau telinganya menyatu dengan ekor karakter lain.
+Inspect each character alone and then in the scene. A locally polished character may fail when a paw disappears behind a table or an ear merges with another character's tail.
 
-## Overlap sebagai hubungan
+## Overlap as relationship
 
-Untuk interaksi dengan prop, tulis urutan depan/belakang:
+For interaction with a prop, state the front-to-back order:
 
-`badan → meja → paw di depan rim → buah yang ditopang paw`.
+`body → table → paw in front of rim → fruit supported by paw`.
 
-Objek yang dipegang harus bersentuhan dengan paw, mulut, atau alat penopang. Bayangan tidak menggantikan kontak. Pada perching pose, toe perlu mencapai ranting; hindari memanjangkan kaki hanya karena karakter dan ranting ditempatkan terpisah.
+A held object must contact a paw, mouth, or supporting tool. A shadow cannot replace contact. For perching poses, toes must reach the branch; do not lengthen legs merely because character and perch were positioned separately.
 
-Periksa sambungan telinga, kaki, dan ekor pada pembesaran. Hindari tangensi yang membuat dua karakter tampak sebagai satu siluet. Jangan menutupi cacat hubungan dengan dedaunan tambahan.
+Enlarge ear, leg, and tail joins. Avoid tangencies that merge two characters into one silhouette. Additional foliage must not hide a failed relationship.
 
-## Kedalaman dan lingkungan
+## Depth and environment
 
-Gunakan perubahan nilai, ukuran, dan overlap yang konsisten. Detail pohon jauh boleh lebih sedikit; karakter utama perlu terpisah dari latar. Pilih satu arah cahaya atau sistem warna datar yang jelas.
+Use consistent value, scale, and overlap changes. Distant trees can have less detail; main characters need separation from the background. Choose a coherent lighting direction or a clearly defined flat-colour system.
 
-Daun tumbuh dari tangkai/kelompok yang masuk akal untuk pendekatan ilustrasinya. Tekstur bark mengikuti batang. Ornamen boleh disederhanakan, tetapi jangan menaburkan semua unsur dengan distribusi acak yang sama.
+Leaves connect to stems/groups appropriate to the illustration. Bark marks follow trunks. Ornament may be simplified, but do not scatter every element with the same random distribution.
 
-Urutan praktis: lingkungan jauh, lantai/mark tanah, karakter dan prop, overlap kontak yang perlu di depan, lalu foreground. Jika mark tanah dibuat belakangan, lindungi hewan dan prop dengan mask. Bounding box adalah perlindungan awal yang kasar; mask bentuk lebih tepat jika komposisi berubah.
+A practical order is distant environment, ground marks, characters/props, foreground contact overlaps, then framing foliage. When ground marks are drawn later, protect characters and props with masks. Bounding boxes offer coarse initial protection; shape masks are more accurate when a composition changes.
 
-## Pemeriksaan sebelum penyerahan
+## Pre-delivery checks
 
-- Halaman utuh: kejadian dan hirarki perhatian terbaca menurut penilaian yang benar-benar dilakukan.
-- Setiap karakter: fitur, anggota tubuh, dan tumpuan tidak terlepas.
-- Kontak interaksi: prop tidak melayang dan paw tidak hilang di belakang rim.
-- Foreground: tidak menutup wajah/aksi tanpa keputusan yang disengaja.
-- Preview pada ukuran baca: karakter kecil masih punya ciri yang diperlukan.
-- Detail material: rumput tidak muncul di bulu atau kayu akibat urutan layer.
+- Whole page: event and attention hierarchy read according to the assessment actually performed.
+- Each character: features, limbs, and support remain connected.
+- Interaction contact: props do not float and paws do not vanish behind rims.
+- Foreground: faces/actions are not covered without an intentional decision.
+- Reading-size preview: small characters retain required features.
+- Material detail: layering does not put ground grass on fur or wood.
 
-Kualitas cerita belum diuji penonton hanya karena agen melihat kejadian itu. Simpan kritik, termasuk hal yang belum matang. Rilis skill atau repositori tidak mengubah ilustrasi contoh menjadi karya yang sempurna.
+Agent understanding of a scene is not viewer validation. Preserve critique and unresolved quality work. Publishing a skill or repository does not make its sample illustrations perfect.

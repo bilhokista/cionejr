@@ -1,80 +1,80 @@
-# Komunikasi, karakter, dan pemilihan gaya
+# Communication, character, and style selection
 
-## Brief yang bisa diperiksa
+## A checkable brief
 
-Ganti "buat yang bagus" dengan keputusan yang bisa dilihat:
+Replace "make it good" with visible decisions:
 
-- Apa yang perlu dipahami atau dirasakan?
-- Hubungan mana yang penting: seekor burung mengincar remah, bukan hanya dua objek berdekatan?
-- Siapa yang melihat, di mana, dan pada ukuran apa?
-- Ciri mana yang wajib bertahan? Mana yang boleh dihilangkan?
+- What should the viewer understand or experience?
+- Which relationship matters? A bird approaching a crumb is more specific than two nearby objects.
+- Who sees it, where, and at what size?
+- Which features must survive? Which may be omitted?
 
-Tidak setiap gambar punya tujuan menjual atau mengidentifikasi spesies. Ilustrasi dekoratif boleh bertujuan memberi pengalaman visual; nyatakan pengalaman dan kondisi pemakaiannya tanpa mengarang hasil terukur.
+An image need not sell something or identify a species. Decorative work may aim at a visual experience; state that experience and its viewing conditions without inventing measured effects.
 
-## Kontrak gaya
+## Style contract
 
-Sebelum merender, tulis aturan yang dapat diperiksa:
+Before rendering, state inspectable rules:
 
-| Unsur | Keputusan yang perlu dijelaskan |
+| Element | Decision to specify |
 |---|---|
-| Bentuk | Massa dominan, tingkat abstraksi, dan deformasi yang diizinkan |
-| Garis dan tepi | Outline atau tanpa outline, perubahan tekanan, kurva keras/lembut |
-| Ruang | Datar atau bervolume, perspektif, cara overlap |
-| Warna/nilai | Peran terang-gelap dan hubungan warna terhadap fokus |
-| Material | Detail yang nyata, yang disiratkan, atau yang diganti ornamen |
-| Komposisi | Fokus, ruang kosong, arah perhatian, dan batas cropping |
-| Keluaran | Medium, ukuran target, latar, tahap finishing |
+| Form | Dominant masses, abstraction level, allowed deformation |
+| Line and edges | Outline or none, pressure variation, hard/soft curves |
+| Space | Flat or volumetric, perspective, overlap conventions |
+| Colour/value | Light-dark roles and colour relationships supporting focus |
+| Material | Explicit detail, suggested detail, or substituted ornament |
+| Composition | Focus, empty space, attention direction, crop limits |
+| Output | Medium, target size, background, finishing stage |
 
-Kata "premium", "modern", atau "pre-2020" belum cukup menjadi kontrak. Minta contoh atau nyatakan keputusan yang diasumsikan. Jangan menyamakan periode dengan satu selera yang berlaku untuk semua orang.
+"Premium," "modern," or "pre-2020" is insufficient. Ask for examples or state assumed decisions. An era does not represent one taste shared by everyone.
 
-Jika mengambil inspirasi gaya, sebutkan aspek yang dipelajari. Mengambil cara mengatur ruang berbeda dari menyalin sebuah karakter atau logo. Rekonstruksi logo harus diberi label sebagai rekonstruksi, bukan desain identitas original. Jangan mengatribusikan niat perancang asli dari tutorial pihak ketiga.
+For style inspiration, identify the aspect studied. Learning spatial organization differs from copying a character or logo. Label logo reconstructions as reconstructions, not original identity designs. Do not infer an original designer's intent from a third-party tutorial.
 
-## Karakter yang tampak dalam tindakan
+## Character through action
 
-Tentukan kecenderungan karakter dan kejadian saat ini. Hubungkan dengan keputusan visual yang bisa diamati.
+Establish a character tendency and the current event. Connect them to visible decisions.
 
-Contoh hipotesis untuk burung penasaran: arah tubuh condong menuju remah, tatapan diarahkan, tetapi tumpuan masih menahan jarak. Itu harus digambar dan dilihat; menulis "penasaran" di caption tidak membuktikan pose berhasil.
+For a curious bird, a possible hypothesis is a body inclined toward a crumb with directed gaze but support still holding some distance. Draw and inspect those cues. A "curious" caption cannot prove the pose succeeds.
 
-Ciri karakter yang perlu konsisten dapat berupa rasio kepala/badan, bentuk paruh, letak bercak, atau cara bergerak. Pisahkan ciri tetap dari perubahan ekspresi. Jika dibutuhkan seri gambar, periksa pada pose lain.
+Character invariants may include head/body ratio, beak form, marking positions, or movement habits. Separate these from changing expressions. For a series, inspect another pose.
 
-Tidak ada kamus universal "lingkaran baik", "segitiga jahat", atau "persegi kuat". Bentuk, konteks, dan relasinya menentukan pembacaan; keputusan itu masih perlu diperiksa.
+There is no universal dictionary in which circles mean goodness, triangles mean evil, or squares mean strength. Shape, context, and relationships affect interpretation and still require inspection.
 
-## Komposisi dan konteks grafis
+## Composition and graphic context
 
-Periksa titik pertama yang menarik perhatian dan ke mana perhatian bergerak. Lihat jarak antarobjek, arah tatapan, serta overlap. Tumpuan dan bayangan boleh membantu aksi; detail latar tidak boleh menggantikan pose yang gagal.
+Inspect what first attracts attention and where it moves next. Look at object spacing, gaze, and overlap. Support and shadows may help explain action; background detail cannot replace a failed pose.
 
-Jika ada teks, tentukan apa yang gambar sampaikan dan apa yang teks perlu jelaskan. Jangan menjadikan caption jawaban yang menutupi gambar tidak terbaca. Copy persis dan typesetting punya pemeriksaan tersendiri.
+If text is present, decide what the image communicates and what the text needs to explain. A caption must not serve as an answer key that conceals unreadable drawing. Exact copy and typesetting require their own checks.
 
-Warna bekerja dalam hubungan. Lihat pengaruh latar, luas bidang warna, dan nilai terang-gelap. Jangan menjanjikan respons emosional universal dari satu swatch.
+Colour works relationally. Inspect background, colour-field area, and light-dark values. Do not promise universal emotional responses from an isolated swatch.
 
-## Uji yang sesuai tugas
+## Task-specific checks
 
-Pilih yang relevan. Tidak semua tugas perlu semua uji.
+Choose relevant checks. Not every task needs every check.
 
-| Uji | Pertanyaan | Batas interpretasi |
+| Check | Question | Interpretation limit |
 |---|---|---|
-| Ukuran akhir | Fitur wajib masih terbaca? | Thumbnail yang terbaca tidak membuktikan semua detail besar benar |
-| Siluet | Aksi atau ciri bentuk bertahan tanpa detail? | Corak internal boleh tetap dibutuhkan untuk identifikasi |
-| Penghilangan | Apa yang hilang ketika elemen dihapus? | Ornamen bisa bernilai sendiri pada brief dekoratif |
-| Variasi pose | Ciri karakter bertahan ketika aksi berubah? | Dua pose bukan bukti semua pose sudah dikuasai |
-| Interpretasi tanpa petunjuk | Apa yang peserta sungguhan melihat? | Jangan memberi jawabannya lebih dahulu atau mengarang peserta |
-| Konteks pakai | Gambar bekerja pada latar/layout yang dimaksud? | Mockup tidak membuktikan performa penjualan |
+| Final size | Do required features remain readable? | A readable thumbnail does not prove large-scale details are correct |
+| Silhouette | Does action or form identity survive without internal detail? | Internal markings may still be needed for identification |
+| Removal | What is lost when an element is deleted? | Ornament may have value in a decorative brief |
+| Pose variation | Does character identity survive changing action? | Two poses do not prove competence across all poses |
+| Unprompted interpretation | What do real participants see? | Do not supply the answer or invent participants |
+| Use context | Does the image work in its intended layout/background? | A mockup cannot prove sales performance |
 
-Jika penonton belum diuji, tulis perkiraan agen sebagai hipotesis. Pengguna yang menyukai gambar memberi data preferensi pengguna itu, bukan konsensus budaya.
+Without viewer testing, record agent interpretation as a hypothesis. One user's preference is evidence about that user, not cultural consensus.
 
-## Membandingkan secara adil
+## Fair comparison
 
-1. Pastikan setiap kandidat melewati [pemeriksaan craft](craft-review.md) sesuai kontrak gayanya.
-2. Kunci tujuan dan kondisi lihat yang sama. Jika tujuan berbeda, jelaskan bahwa itu pilihan tujuan, bukan peringkat mutu universal.
-3. Bandingkan hasil yang sudah dilihat, bukan satu hasil final dengan janji versi lain.
-4. Catat manfaat tiap kandidat dan pengorbanannya terhadap brief.
-5. Pisahkan preferensi dari kegagalan eksekusi. Jika cacat baru ditemukan, kembalikan kandidat ke revisi dan tahan keputusan taste.
-6. Pilih dengan alasan yang dapat ditunjukkan. Simpan preferensi pengguna dan batas produksi secara terpisah dari penilaian artistik.
+1. Ensure each candidate passes [craft review](craft-review.md) for its own style contract.
+2. Hold purpose and viewing conditions constant. Different goals are goal choices, not a universal quality ranking.
+3. Compare inspected results, not a finished image against a promised alternative.
+4. Record each candidate's benefit and sacrifice relative to the brief.
+5. Separate preference from execution failure. A newly discovered defect returns the candidate to revision and suspends taste selection.
+6. Choose for reasons that can be shown. Record user preference and production limits separately from artistic judgment.
 
-Contoh: untuk ikon 32 px, bulu halus yang menyatu menjadi noise adalah masalah kandidat itu pada ukuran tersebut. Jangan menyimpulkan semua ilustrasi rinci buruk. Perbaiki penyederhanaan yang masih setia pada bahasa visualnya sebelum membandingkan.
+For a 32 px icon, fine feathers merging into noise are a problem for that candidate at that size. Do not conclude that all detailed illustrations are bad. Repair the simplification within its visual language before comparing.
 
-## Catatan kalibrasi taste
+## Taste calibration notes
 
-Simpan gambar yang diterima maupun ditolak jika pengguna mengizinkan. Sertakan konteks, alasan, dan siapa yang memberi penilaian. Jangan menyebut kumpulan contoh kecil sebagai standar semua orang.
+With permission, preserve accepted and rejected images alongside context, reasons, and the person giving the judgment. A small collection is not everyone's standard.
 
-Referensi yang tidak cocok dengan brief bisa tetap merupakan karya bagus. Hindari menjadikan gaya favorit agen sebagai patokan. Kritik harus menjelaskan pilihan visual, bukan menambah daftar kata sifat.
+A reference unsuited to the brief may still be good art. Do not make the agent's favourite style the default criterion. Critique visual choices instead of adding adjectives.

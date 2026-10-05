@@ -1,86 +1,87 @@
-# Worksheet pekerjaan visual
+# Visual work worksheet
 
-Salin bagian yang relevan ke proyek. Isi dari bukti, bukan tebakan agar formulir terlihat lengkap. Tulis "belum diketahui" jika memang belum ada jawaban.
+Copy the relevant sections into a project. Fill them from evidence, not guesses that make a form appear complete. Write "unknown" when information is unavailable.
 
 ## Brief
 
-- Permintaan pengguna:
-- Jenis pekerjaan: riset / belajar / kritik / gambar / revisi / perbandingan.
-- Subjek dan identitas:
-- Aksi atau hubungan yang perlu terbaca:
-- Penonton dan konteks pemakaian:
-- Medium dan ukuran akhir:
-- Tahap hasil yang diminta:
-- Fitur wajib dan yang boleh dihilangkan:
-- Asumsi yang perlu disahkan:
-- Alat tersedia dan batas kerja:
+- User request:
+- Task: research / teaching / critique / drawing / revision / comparison.
+- Subject and identity:
+- Action or relationship that must read:
+- Audience and use context:
+- Medium and final size:
+- Requested working stage:
+- Required features and permitted omissions:
+- Assumptions needing confirmation:
+- Available tools and work budget:
 
-## Referensi
+## References
 
-| Peran | Pembuat dan sumber | Yang diamati | Izin reproduksi/perubahan | Batas atau konflik |
+| Role | Creator and source | Observations | Reproduction/modification rights | Limits or conflicts |
 |---|---|---|---|---|
-| Pose utama | | | | |
+| Primary pose | | | | |
 | Detail | | | | |
-| Gaya | | | | |
+| Style | | | | |
 
-## Kontrak gaya dan konstruksi
+## Style and construction contract
 
-- Bentuk dominan dan operasi:
-- Datar atau bervolume:
-- Rasio/landmark yang diperiksa:
-- Sambungan dan tumpuan:
-- Aturan distorsi dan ciri tetap:
-- Perilaku garis/tepi:
-- Warna/nilai dan material:
-- Fokus serta ruang negatif:
-- Anggaran detail pada ukuran akhir:
+- Dominant shapes and operations:
+- Flat or volumetric:
+- Ratios/landmarks to inspect:
+- Connections and support:
+- Deformation rules and invariants:
+- Line/edge behavior:
+- Colour/value and material:
+- Focus and negative space:
+- Detail budget at final size:
+- For scenes: interactions, depth layers, and contact/occlusion order:
 
-## Sebelum detail
+## Before detail
 
-| Aspek relevan | Bukti yang dilihat | Status | Perbaikan jika perlu |
+| Relevant aspect | Observed evidence | Status | Needed change |
 |---|---|---|---|
-| Identitas | | | |
-| Aksi | | | |
-| Sambungan | | | |
-| Volume/logika datar | | | |
-| Tumpuan | | | |
-| Ruang negatif | | | |
+| Identity | | | |
+| Action | | | |
+| Connections | | | |
+| Volume/flat-form logic | | | |
+| Support | | | |
+| Negative space | | | |
 
-Status yang boleh: layak untuk tahap ini / revisi / belum dapat dinilai / tidak relevan dengan alasan.
+Statuses: ready for this stage / revise / not yet assessed / not applicable with a reason.
 
-Keputusan lanjut atau kembali ke konstruksi:
+Decision to proceed or return to construction:
 
-## Sesudah render
+## After rendering
 
-- File hasil dan versi:
-- Hasil utuh yang dilihat:
-- Bagian yang diperbesar:
-- Ukuran pemakaian yang diperiksa:
-- Pemeriksaan file yang benar-benar dijalankan:
-- Penilaian visual agen:
-- Respons pengguna atau peserta yang benar-benar diperoleh:
+- Output file and version:
+- Whole image inspected:
+- Enlarged locations:
+- Intended display size checked:
+- File checks actually performed:
+- Agent visual judgment:
+- Actual user/participant responses:
 
-## Log revisi
+## Revision log
 
-| Versi | Lokasi dan cacat teramati | Dugaan penyebab | Perubahan | Hasil pemeriksaan ulang dan regresi |
+| Version | Location and observed defect | Suspected cause | Change | Recheck result and regressions |
 |---|---|---|---|---|
 | | | | | |
 
-## Perbandingan, hanya jika diminta
+## Comparison, only when requested
 
-- Tujuan dan kondisi lihat bersama:
-- Kontrak gaya masing-masing:
-- Pemeriksaan craft tiap kandidat dan status:
-- Apakah semua kandidat layak? Jika tidak, tahan keputusan taste.
-- Manfaat serta pengorbanan masing-masing terhadap brief:
-- Preferensi pengguna, terpisah dari cacat craft:
-- Batas alat/produksi, terpisah dari penilaian artistik:
-- Pilihan dan alasan yang bisa ditunjukkan:
+- Shared purpose and viewing conditions:
+- Style contracts:
+- Each candidate's craft checks and status:
+- Are all candidates ready? If not, withhold taste selection.
+- Benefits and sacrifices relative to the brief:
+- User preference, separate from craft defects:
+- Tool/production limits, separate from artistic judgment:
+- Selection and visible reasons:
 
-## Penutupan
+## Closeout
 
-- Status hasil dan cakupan kelulusan:
-- Batas yang belum selesai:
-- Langkah lanjut yang spesifik:
-- Sumber/kredit yang ikut dikirim:
-- Catatan yang perlu disimpan ke memori proyek:
+- Output status and scope of readiness:
+- Unresolved limits:
+- Specific next step:
+- Credits delivered with the result:
+- Notes to preserve in project memory:
