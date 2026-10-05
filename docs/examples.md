@@ -16,6 +16,14 @@ The portable renderer uses DejaVu Serif or Pillow's fallback for labels. Earlier
 
 Issues found during inspection and fixed: the first pixel version filled only the left half of the frame and its beak merged with the face mask; the first stained-glass version drew lead lines for hidden parts of the wing. Not fixed: the ink wing outline is faint, the paper-cut belly shade is subtle, and the blueprint labels are small at sheet size. The blueprint carries no measurements, because none were taken. All five are agent-inspected digital studies, not physical media.
 
+## Forest meeting
+
+A second woodland page with a different event: an owl chairs a meeting from a stump while the others sit in a ring and listen. The owl, mouse, stump, log and glade are drawn from scratch; the fox, deer, rabbit, squirrel and hedgehog are the animals from the forest gathering, cut out and placed as sprites (the deer and hedgehog mirrored). They therefore carry that page's open issues.
+
+The grey layout was rendered and inspected before any material. It showed the fox's head overlapping the deer and the rabbit's ears covering the squirrel, so the cast was moved and scaled before the full render; a test now asserts that no two placed animals overlap. A first pass also let the frame trunks cut across the fox and squirrel, so the trunks are now drawn behind the cast. The mouse was first upscaled from a smaller drawing and looked soft; it is now drawn at final size.
+
+Not fixed: the mouse's paw is a plain block on the leaf, the owl's leaf sits over its chest and not clearly in a wing, the hedgehog looks across the ring and not at the owl, and the deer's gaze is downward. All judgments are agent inspection, not a viewer study.
+
 ## Forest gathering
 
 The page contains six fictional woodland characters around a basket on a stump. It is full bleed and has no text. The layout was opened before the full scene was implemented. The squirrel/perch was moved to avoid a rabbit-ear tangency.

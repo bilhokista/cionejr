@@ -33,6 +33,9 @@ jobs:
           python examples/bird-styles/test_outputs.py
           python examples/more-styles/render.py
           python examples/more-styles/test_outputs.py
+          python examples/forest-meeting/render.py --layout
+          python examples/forest-meeting/render.py
+          python examples/forest-meeting/test_outputs.py
           python examples/forest-gathering/render.py --layout
           python examples/forest-gathering/render.py
           python examples/forest-gathering/test_outputs.py

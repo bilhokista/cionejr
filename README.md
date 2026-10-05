@@ -47,6 +47,7 @@ All core instructions, supporting guides, worksheets, and evaluation cases are i
 
 - [Bird styles](examples/bird-styles/): geometric colour planes, digital linocut-like cuts, and a painterly treatment inspired by gouache.
 - [More styles](examples/more-styles/): pixel art, ink line, cut paper, stained glass and blueprint treatments of the same bird.
+- [Forest meeting](examples/forest-meeting/): an owl chairs a woodland meeting from a stump, full page, no text.
 - [Forest gathering](examples/forest-gathering/): six fictional woodland characters around a fruit basket, 2400 x 3000, without text.
 
 These are work-in-progress studies. The forest page still needs refinement. The [example notes](docs/examples.md) distinguish actual checks from unresolved quality work.
@@ -65,6 +66,10 @@ python examples/bird-styles/test_outputs.py
 
 python examples/more-styles/render.py
 python examples/more-styles/test_outputs.py
+
+python examples/forest-meeting/render.py --layout
+python examples/forest-meeting/render.py
+python examples/forest-meeting/test_outputs.py
 
 python examples/forest-gathering/render.py --layout
 python examples/forest-gathering/render.py
