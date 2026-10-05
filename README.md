@@ -6,7 +6,7 @@ An experimental illustration skill for coding agents. Build from basic shapes, i
 
 ## Earliest alpha: help us improve it
 
-**This is cionejr's earliest alpha (v0.1.0).** The sample illustrations still need cleanup, and the workflow has not yet been independently evaluated. Expect changes as we learn what works.
+**This is cionejr's earliest alpha (v0.1.1).** The sample illustrations still need cleanup, and the workflow has not yet been independently evaluated. Expect changes as we learn what works.
 
 We want as many people as possible to help improve it. Everyone is welcome, and you do not need to write code. Show us where a drawing fails, suggest a clearer instruction, test the skill with your agent, or contribute a focused fix. Small contributions count. See [how to contribute](CONTRIBUTING.md).
 
@@ -83,7 +83,7 @@ docs/                Sources, example status, and development priorities
 
 File tests check dimensions and basic output contracts. Skill validation checks YAML metadata and bundled links. Neither certifies anatomy, drawing competence, viewer understanding, or the effectiveness of an agent following the skill.
 
-Behavioral evaluation cases are specifications, not passed benchmarks. There has been no controlled before/after study of an image generator. Third-party books are referenced by their public descriptions; they are not bundled or represented as fully read.
+The 13 behavioral cases were executed once each in fresh subagent sessions ([run record](evaluations/runs/2026-10-05.md)). Two failed on v0.1.0 and were fixed in v0.1.1; this is one run per case, graded by an agent, not a benchmark. There has been no controlled before/after study of an image generator. Third-party books are referenced by their public descriptions; they are not bundled or represented as fully read.
 
 ## Contributing and license
 

@@ -136,6 +136,8 @@ Rules: scene staging; SKILL steps 3, 4, and 6.
 
 ## Execution record
 
+The first execution is recorded in `evaluations/runs/2026-10-05.md` in the repository root (outside this portable skill folder): 11 pass and 2 fail on v0.1.0, and both failures passed one rerun on v0.1.1.
+
 For each case preserve input/attachments, host/model, skill version, available tools, output, inspection evidence, status, and reasons. Use `pass`, `fail`, or `not run` for case execution; do not confuse them with drawing craft statuses.
 
 Mapping cases to document rules is a coverage review only. Effectiveness requires actual actions/results in fresh sessions under comparable briefs and conditions. One image does not establish drawing mastery.

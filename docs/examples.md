@@ -4,7 +4,7 @@
 
 The three birds share a stylized right-facing perching pose. Their crown, cheek patch, and dark throat were informed by Laitche's public-domain Osaka photograph of a Eurasian tree sparrow. The perched pose and rendering are adaptations, not an anatomical identification plate.
 
-The treatments use clean colour planes, one-ink negative cuts, and local painterly fields/marks. They are authored digital studies, not physical linocut prints or paintings. The painterly example is inspired by gouache; it does not simulate every property of that material.
+The treatments use clean colour planes, one-ink negative cuts, and opaque brush-stroke fields. They are authored digital studies, not physical linocut prints or paintings. The painterly example is inspired by gouache: each field has a brush-cut edge with dry-brush gaps, overlapping strokes that follow the form (around round masses, along slender ones) and a matte surface. An earlier version used blurred masks and noise and read as airbrush. It still does not simulate pigment, water or paper physics.
 
 During development, an unintended panel-background rectangle was removed, toe separators were added to the one-ink version, the painterly marks were revised, and the geometric beak join was cleaned up. The first material render preceded separate layout inspection, so this example does not establish perfect adherence to the skill workflow.
 

@@ -6,7 +6,7 @@ cionejr is an experimental open-source illustration skill with reproducible Pyth
 
 ## Initial distribution
 
-- Portable skill name/directory: cionejr, version 0.1.0, MIT.
+- Portable skill name/directory: cionejr, version 0.1.1 (0.1.0 at first publish), MIT.
 - Includes construction, craft, communication, scene staging, a worksheet, and behavioral evaluation specifications.
 - Samples: three bird render treatments and one woodland storybook page. Their limitations are documented; the forest example needs refinement.
 - Validation tooling checks frontmatter and local links. Renderer tests check output contracts and selected placement rules, not artistic quality.
@@ -34,6 +34,12 @@ cionejr is an experimental open-source illustration skill with reproducible Pyth
 - Replaced coarse protected rectangles with a shape-aware ground-mark mask (silhouettes plus 12 px margin). Wrote the failing test first, then the implementation; the test covers points inside the old boxes, just outside contours, and on ears, paws and the stump rim.
 - Fox apple now sits on the stump top beside the paw with a contact shadow; deer gaze lowered to the basket; foliage mixes fronds and broad leaves with per-leaf colour jitter. Three floating contact shadows added first were judged detached in a full-resolution crop and removed.
 - Checks run: skill validator, 18 repository tests, 5 forest output tests, `git diff --check`. These do not establish artistic quality; visual judgments are the agent's own.
+
+## Refinement pass and first evaluation run (2026-10-05)
+
+- Forest: pear-shaped fox with shoulder and haunch, deer with S-curved neck, lowered head and hock-bent legs, rabbit shoulder fill, foliage anchored to branch points. Gouache bird rebuilt with opaque brush-cut fields and form-following strokes.
+- Ran all 13 evaluation cases once in fresh Sonnet 5.5 subagent sessions with the answer key withheld. 01 and 06 failed on v0.1.0 (detail over a known defect; species plate from memory). Added rules 9 and 10, bumped to v0.1.1, reruns passed. Record: evaluations/runs/2026-10-05.md. Fixtures: evaluations/fixtures/make_fixtures.py.
+- Limits: one run per case, agent grader, same model family, reruns tuned to the failures, case 12 leaked a host skill.
 
 ## Next
 

@@ -4,7 +4,7 @@ description: >-
   Construct and critique drawings, illustrations, characters, and graphic compositions from basic shapes across scales. Use for reference drawing, sketching, geometric illustration, feather and material detail, storybook scenes, visual storytelling, style translation, and contextual taste decisions. Require style-specific craft checks before comparing alternatives.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   status: "earliest-alpha"
   language: "en"
 ---
@@ -51,6 +51,8 @@ For a complete illustration, read construction, craft review, and communication.
 6. Every candidate must pass its own relevant craft checks before a taste comparison. Mark an unfinished candidate for revision rather than declaring its style inferior.
 7. Separate file checks, agent visual judgments, and real viewer responses. One kind of evidence cannot replace another.
 8. Preserve previous versions and unresolved defects. Do not rewrite earlier critique as proof of success.
+9. A known structural defect (a join, attachment, support or identity fault) blocks the detail the user asked for, even when the request says "only add X". Repair the smallest construction change that removes the defect first and say so, or stop and report that detail is blocked. Never layer detail over a defect you have named.
+10. Without accessible references, do not draw identification plates, "X versus Y" callouts, or field-mark claims from memory. Ask whether a labeled generic study is acceptable before drawing, and keep any such study free of diagnostic marks.
 
 ## Workflow
 
@@ -66,7 +68,7 @@ Choose references that support the pose and identifying features. Record provena
 
 Record checkable relationships: mass ratios, feature placement relative to contours, joint directions, and support. Define invariants for fictional subjects. Do not mix incompatible species anatomy without a deliberate decision.
 
-If references are inaccessible, state the limit. A labeled generic study is possible; unverifiable accuracy claims are not.
+If references are inaccessible, state the limit and ask, in one short question, whether a labeled generic study is acceptable. Do not draw until that is settled unless the user already said so. A generic study may not carry diagnostic field marks, comparison callouts, or a test that tells species apart; those are unverifiable accuracy claims.
 
 ### 3. Construct masses and action
 
@@ -78,7 +80,7 @@ Check silhouettes, negative space, relative size, and contact with the environme
 
 Apply the structural checks in the craft guide. Record evidence and status: `ready for this stage`, `revise`, or `not yet assessed`.
 
-If a relevant identity, action, perspective, or connection defect remains, return to construction. For intentional deviations, state the deformation rule and inspect whether the result stays consistent and readable.
+If a relevant identity, action, perspective, or connection defect remains, return to construction. This applies when the user asked only for detail: a request for feathers, texture, or polish does not authorize leaving a pasted-on head or an unsupported limb in place (rule 9). For intentional deviations, state the deformation rule and inspect whether the result stays consistent and readable.
 
 ### 5. Develop parts and materials
 

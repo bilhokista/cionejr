@@ -261,28 +261,77 @@ def lino():
     return Image.fromarray(arr)
 
 
-def painted_field(image,commands,color,seed,variation=6,softness=.65,parent=None):
-    mask=shape_mask(commands)
-    if softness:
-        mask=mask.filter(ImageFilter.GaussianBlur(softness*S))
-    if parent is not None:
-        mask=ImageChops.multiply(mask,parent)
-    box=mask.getbbox()
-    x0,y0,x1,y1=box
-    rng=np.random.default_rng(seed)
-    height,width=y1-y0,x1-x0
-    # Low-frequency pigment and fine paper grain, both local to the paint layer.
-    low=Image.fromarray(rng.integers(95,160,(max(2,height//42),max(2,width//42)),dtype=np.uint8))
-    low=np.asarray(low.resize((width,height),Image.Resampling.BICUBIC),dtype=np.float32)-128
-    grain=rng.normal(0,1.7,(height,width))
-    # Opaque paint keeps discrete pigment variations rather than smooth airbrush shading.
-    pigment=np.round(low/5)*5
-    yy,xx=np.mgrid[0:height,0:width]
-    bristle=np.sin((xx*.32+yy*.11))*1.05
+def smooth_noise(rng,shape,cell):
+    """Low-frequency noise in [-1, 1] for wavering edges and uneven pigment."""
+    height,width=shape
+    grid=rng.uniform(-1,1,(height//cell+3,width//cell+3)).astype(np.float32)
+    big=Image.fromarray(((grid+1)*127.5).astype(np.uint8)).resize((width,height),Image.Resampling.BICUBIC)
+    return np.asarray(big,dtype=np.float32)/127.5-1
+
+
+def opaque_edge(mask,rng):
+    """Brush-cut edge: slightly irregular, with dry-brush gaps where paper shows through."""
+    wobble=smooth_noise(rng,mask.shape,9*S)*.2+smooth_noise(rng,mask.shape,3*S)*.07
+    cut=((mask+wobble)>.5).astype(np.float32)
+    edge=Image.fromarray((cut*255).astype(np.uint8))
+    inner=np.asarray(edge.filter(ImageFilter.MinFilter(2*S+1)),dtype=np.float32)/255
+    gaps=(cut-inner>.4)&(smooth_noise(rng,mask.shape,S)>.3)
+    cut[gaps]=0
+    return np.asarray(Image.fromarray((cut*255).astype(np.uint8)).filter(
+        ImageFilter.GaussianBlur(.45*S)),dtype=np.float32)/255
+
+
+def stroke_flow(alpha):
+    """Stroke direction: along the long axis of slender shapes, around the centre of round ones."""
+    ys,xs=np.nonzero(alpha>.5)
+    if len(xs)<20:
+        return lambda x,y:0.0
+    cx,cy=xs.mean(),ys.mean()
+    values,vectors=np.linalg.eigh(np.cov(np.vstack([xs,ys])))
+    if values[1]>5*values[0]:
+        axis=math.atan2(vectors[1,1],vectors[0,1])
+        return lambda x,y:axis
+    return lambda x,y:math.atan2(y-cy,x-cx)+math.pi/2
+
+
+def brush_strokes(patch,rng,color,variation,box_size,flow):
+    """Directional, overlapping strokes of slightly different opaque tone."""
+    width,height=box_size
     base=np.array(rgb(color),dtype=np.float32)
-    tex=base[None,None,:]+(pigment*variation/24+grain+bristle)[:,:,None]
+    draw=ImageDraw.Draw(patch)
+    for _ in range(min(5000,max(30,width*height//(S*S*70)))):
+        x=rng.uniform(0,width)
+        y=rng.uniform(0,height)
+        angle=flow(x,y)+rng.normal(0,.3)
+        length=rng.uniform(10,34)*S
+        dx,dy=math.cos(angle)*length/2,math.sin(angle)*length/2
+        shift=rng.normal(0,variation*.5)
+        tone=tuple(int(max(0,min(255,v+shift+rng.normal(0,1.5)))) for v in base)
+        draw.line([(x-dx,y-dy),(x+dx,y+dy)],fill=tone,width=int(rng.uniform(2.2,5.5)*S))
+        ridge=tuple(min(255,t+9) for t in tone)
+        draw.line([(x-dx,y-dy-S),(x+dx,y+dy-S)],fill=ridge,width=max(1,S//2))
+
+
+def painted_field(image,commands,color,seed,variation=6,softness=.65,parent=None):
+    """Opaque gouache-like field: brush-cut edge, visible strokes, matte pigment."""
+    pad=6*S
+    x0,y0,x1,y1=shape_mask(commands).getbbox()
+    box=(max(0,x0-pad),max(0,y0-pad),min(W*S,x1+pad),min(H*S,y1+pad))
+    rng=np.random.default_rng(seed)
+    mask=shape_mask(commands).crop(box)
+    mask=mask.filter(ImageFilter.GaussianBlur(min(softness,1.6)*S))
+    alpha=opaque_edge(np.asarray(mask,dtype=np.float32)/255,rng)
+    if parent is not None:
+        alpha*=np.asarray(parent.crop(box),dtype=np.float32)/255
+    width,height=box[2]-box[0],box[3]-box[1]
+    pigment=np.round(smooth_noise(rng,(height,width),30*S)*variation*.35/2)*2
+    flat=np.array(rgb(color),dtype=np.float32)[None,None,:]+pigment[:,:,None]
+    patch=Image.fromarray(np.clip(flat,0,255).astype(np.uint8))
+    brush_strokes(patch,rng,color,variation,(width,height),stroke_flow(alpha))
+    tooth=rng.normal(0,1.4,(height,width))
+    tex=np.asarray(patch,dtype=np.float32)+tooth[:,:,None]
     patch=Image.fromarray(np.clip(tex,0,255).astype(np.uint8))
-    image.paste(patch,(x0,y0),mask.crop(box))
+    image.paste(patch,box[:2],Image.fromarray((alpha*255).astype(np.uint8)))
 
 
 def gouache():
